@@ -24,3 +24,45 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* ================= Social Icon Styling ================= */
+
+.social-icon {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e5e7eb;
+    border-radius: 9999px;
+    color: #6b7280;
+    /* ================= Social Icon Styling ================= */
+
+    .social-icon {
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #e5e7eb;
+        border-radius: 9999px;
+        color: #6b7280;
+        /* ================= Social Icon Styling ================= */
+
+        .social-icon {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #e5e7eb;
+            border-radius: 9999px;
+            color: #6b7280;
+            transition: all 0.3s ease;
+        }
+
+            .social-icon:hover {
+                border-color: #c6a75e;
+                color: #c6a75e;
+                transform: translateY(-3px);
+            }
