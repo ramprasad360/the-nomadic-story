@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 
 
 export const metadata: Metadata = {
-    metadataBase: new URL("https://yourdomain.com"), // change after buying domain
+    metadataBase: new URL("https://the-nomadic-story.vercel.app"),
     title: {
         default: "The Nomadic Story",
         template: "%s | The Nomadic Story",
