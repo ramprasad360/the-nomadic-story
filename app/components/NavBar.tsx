@@ -10,6 +10,8 @@ type ContinentGallery = Record<string, CountryGallery>;
 
 export default function NavBar() {
     const [open, setOpen] = useState(false);
+    const [activeContinent, setActiveContinent] = useState<string | null>(null);
+    const [activeCountry, setActiveCountry] = useState<string | null>(null);
 
     const gallery: ContinentGallery = {
         Asia: {
@@ -23,8 +25,6 @@ export default function NavBar() {
         },
     };
 
-
-    // ✅ Automatic ISO Mapping
     const getISOCode = (country: string) => {
         const isoMap: Record<string, string> = {
             China: "cn",
@@ -76,73 +76,106 @@ export default function NavBar() {
                     <div
                         className="relative"
                         onMouseEnter={() => setOpen(true)}
-                        onMouseLeave={() => setOpen(false)}
+                        onMouseLeave={() => {
+                            setOpen(false);
+                            setActiveContinent(null);
+                            setActiveCountry(null);
+                        }}
                     >
                         <button
-                            className={`${navItemStyle} uppercase tracking-[0.25em]`}
-                            aria-haspopup="true"
-                            aria-expanded={open}
+                            onClick={() => setOpen(!open)}
+                            className={`${navItemStyle}`}
                         >
-                            Destinations
+                            DESTINATIONS
                         </button>
 
                         {open && (
                             <div className="absolute left-1/2 -translate-x-1/2 top-full w-[240px] bg-white border border-gray-200 rounded-md shadow-xl flex flex-col">
 
-                                {Object.entries(gallery)
-                                    .sort(([a], [b]) => a.localeCompare(b))
-                                    .map(([continent, countries]) => (
-                                        <div key={continent} className="relative group/continent">
+                                {Object.entries(gallery).map(([continent, countries]) => {
+                                    const isContinentOpen = activeContinent === continent;
 
-                                            <div className="px-5 py-3 text-[12px] uppercase text-center hover:bg-[#d4a373] hover:text-white transition cursor-pointer">
+                                    return (
+                                        <div key={continent} className="relative">
+
+                                            <div
+                                                onClick={() =>
+                                                    setActiveContinent(
+                                                        isContinentOpen ? null : continent
+                                                    )
+                                                }
+                                                onMouseEnter={() => setActiveContinent(continent)}
+                                                className="px-5 py-3 text-[12px] uppercase text-center hover:bg-[#d4a373] hover:text-white transition cursor-pointer"
+                                            >
                                                 {continent}
                                             </div>
 
-                                            <div className="absolute left-full top-0 bg-white border border-gray-200 shadow-xl rounded-md opacity-0 group-hover/continent:opacity-100 pointer-events-none group-hover/continent:pointer-events-auto whitespace-nowrap min-w-[200px]">
+                                            {isContinentOpen && (
+                                                <div className="absolute left-full top-0 bg-white border border-gray-200 shadow-xl rounded-md whitespace-nowrap min-w-[200px]">
 
-                                                {Object.entries(countries)
-                                                    .sort(([a], [b]) => a.localeCompare(b))
-                                                    .map(([country, cities]) => (
-                                                        <div key={country} className="relative group/country">
+                                                    {Object.entries(countries).map(
+                                                        ([country, cities]) => {
+                                                            const isCountryOpen =
+                                                                activeCountry === country;
 
-                                                            <div className="flex items-center gap-3 px-5 py-3 hover:bg-[#d4a373] hover:text-white transition cursor-pointer">
+                                                            return (
+                                                                <div key={country} className="relative">
 
-                                                                {/*{countryFlags[country] && (*/}
-                                                                    <Image
-                                                                        src={`https://flagcdn.com/${getISOCode(country)}.svg`}
-                                                                        alt={`${country} flag`}
-                                                                        width={18}
-                                                                        height={12}
-                                                                        className="rounded-sm shadow-sm object-cover"
-                                                                    />
+                                                                    <div
+                                                                        onClick={() =>
+                                                                            setActiveCountry(
+                                                                                isCountryOpen ? null : country
+                                                                            )
+                                                                        }
+                                                                        onMouseEnter={() =>
+                                                                            setActiveCountry(country)
+                                                                        }
+                                                                        className="flex items-center gap-3 px-5 py-3 hover:bg-[#d4a373] hover:text-white transition cursor-pointer"
+                                                                    >
+                                                                        <Image
+                                                                            src={`https://flagcdn.com/${getISOCode(
+                                                                                country
+                                                                            )}.svg`}
+                                                                            alt={`${country} flag`}
+                                                                            width={18}
+                                                                            height={12}
+                                                                            className="rounded-sm shadow-sm object-cover"
+                                                                        />
+                                                                        <span className="tracking-wide text-[12px]">
+                                                                            {country}
+                                                                        </span>
+                                                                    </div>
 
-                                                                <span className="tracking-wide text-[12px]">
-                                                                    {country}
-                                                                </span>
-                                                            </div>
+                                                                    {isCountryOpen && (
+                                                                        <div className="absolute left-full top-0 bg-white border border-gray-200 shadow-xl rounded-md whitespace-nowrap min-w-[220px]">
 
-                                                            <div className="absolute left-full top-0 bg-white border border-gray-200 shadow-xl rounded-md opacity-0 group-hover/country:opacity-100 pointer-events-none group-hover/country:pointer-events-auto whitespace-nowrap min-w-[220px]">
-
-                                                                {Object.keys(cities)
-                                                                    .sort((a, b) => a.localeCompare(b))
-                                                                    .map((city) => (
-                                                                        <Link
-                                                                            key={city}
-                                                                            href={`/${city
-                                                                                .toLowerCase()
-                                                                                .replace(/\s+/g, "-")}`}
-                                                                            onClick={() => setOpen(false)}
-                                                                            className="block px-5 py-3 text-[11px] uppercase hover:bg-[#d4a373] hover:text-white transition"
-                                                                        >
-                                                                            {city}
-                                                                        </Link>
-                                                                    ))}
-                                                            </div>
-                                                        </div>
-                                                    ))}
-                                            </div>
+                                                                            {Object.keys(cities).map((city) => (
+                                                                                <Link
+                                                                                    key={city}
+                                                                                    href={`/${city
+                                                                                        .toLowerCase()
+                                                                                        .replace(/\s+/g, "-")}`}
+                                                                                    onClick={() => {
+                                                                                        setOpen(false);
+                                                                                        setActiveContinent(null);
+                                                                                        setActiveCountry(null);
+                                                                                    }}
+                                                                                    className="block px-5 py-3 text-[11px] uppercase hover:bg-[#d4a373] hover:text-white transition"
+                                                                                >
+                                                                                    {city}
+                                                                                </Link>
+                                                                            ))}
+                                                                        </div>
+                                                                    )}
+                                                                </div>
+                                                            );
+                                                        }
+                                                    )}
+                                                </div>
+                                            )}
                                         </div>
-                                    ))}
+                                    );
+                                })}
                             </div>
                         )}
                     </div>
@@ -170,3 +203,4 @@ export default function NavBar() {
         </header>
     );
 }
+//
