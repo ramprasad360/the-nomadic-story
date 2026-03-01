@@ -1,28 +1,35 @@
 @import "tailwindcss";
 
+/* ================= Root Variables ================= */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    --background: #ffffff;
+    --foreground: #171717;
 }
 
+/* Tailwind Theme Mapping */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --font-sans: var(--font-geist-sans);
+    --font-mono: var(--font-geist-mono);
 }
+
+/* ================= Dark Mode ================= */
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+    :root {
+        --background: #0a0a0a;
+        --foreground: #ededed;
+    }
 }
 
+/* ================= Global Body ================= */
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 /* ================= Social Icon Styling ================= */
@@ -36,33 +43,11 @@ body {
     border: 1px solid #e5e7eb;
     border-radius: 9999px;
     color: #6b7280;
-    /* ================= Social Icon Styling ================= */
+    transition: all 0.3s ease;
+}
 
-    .social-icon {
-        width: 36px;
-        height: 36px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: 1px solid #e5e7eb;
-        border-radius: 9999px;
-        color: #6b7280;
-        /* ================= Social Icon Styling ================= */
-
-        .social-icon {
-            width: 36px;
-            height: 36px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid #e5e7eb;
-            border-radius: 9999px;
-            color: #6b7280;
-            transition: all 0.3s ease;
-        }
-
-            .social-icon:hover {
-                border-color: #c6a75e;
-                color: #c6a75e;
-                transform: translateY(-3px);
-            }
+    .social-icon:hover {
+        border-color: #c6a75e;
+        color: #c6a75e;
+        transform: translateY(-3px);
+    }
