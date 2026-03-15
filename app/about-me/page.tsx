@@ -2,7 +2,7 @@
 import Link from "next/link";
 import SocialSection from "@/app/components/SocialSection";
 import type { Metadata } from "next";
-
+import Script from "next/script";
 
 export const metadata: Metadata = {
     alternates: {
@@ -45,8 +45,10 @@ export const metadata: Metadata = {
 export default function AboutPage() {
     return (
         <main>
-            <script
+            <Script
+                id="person-schema"
                 type="application/ld+json"
+                strategy="afterInteractive"
                 dangerouslySetInnerHTML={{
                     __html: JSON.stringify({
                         "@context": "https://schema.org",
@@ -66,7 +68,6 @@ export default function AboutPage() {
                     }),
                 }}
             />
-
             {/* HERO SECTION */}
             <section className="relative w-full min-h-[60vh] sm:min-h-[70vh] md:h-screen overflow-hidden">
                 <Image
