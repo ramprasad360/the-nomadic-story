@@ -8,17 +8,15 @@ export default function SocialShare({ title }: { title: string }) {
     const pathname = usePathname();
     const searchParams = useSearchParams();
     const [copied, setCopied] = useState(false);
-
-    // ✅ Build full URL safely (no window usage)
     const queryString = searchParams?.toString();
+
     const baseUrl =
         process.env.NEXT_PUBLIC_SITE_URL || "https://thenomadicstory.com";
 
-    const url = `${baseUrl}${pathname}${queryString ? `?${queryString}` : ""
-        }`;
+    const url = `${baseUrl}${pathname}${queryString ? `?${queryString}` : ""}`;
 
-    const encodedUrl = encodeURIComponent(url);
-    const encodedTitle = encodeURIComponent(title);
+    const encodedUrl = encodeURIComponent(url || "");
+    const encodedTitle = encodeURIComponent(title || "");
 
     useEffect(() => {
         if (!copied) return;
@@ -32,7 +30,11 @@ export default function SocialShare({ title }: { title: string }) {
 
     const copyLink = async () => {
         try {
-            await navigator.clipboard.writeText(url);
+
+            if (url) {
+                await navigator.clipboard.writeText(url);
+            }
+
             setCopied(true);
         } catch (err) {
             console.error("Copy failed:", err);
