@@ -1,8 +1,13 @@
 ﻿import Image from "next/image";
 import Link from "next/link";
-import SocialSection from "@/app/components/SocialSection";
 import type { Metadata } from "next";
 import Script from "next/script";
+import dynamic from "next/dynamic";
+
+const SocialSection = dynamic(
+    () => import("@/app/components/SocialSection"),
+    { ssr: false }
+);
 
 export const metadata: Metadata = {
     alternates: {
