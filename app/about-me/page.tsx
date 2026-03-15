@@ -2,7 +2,7 @@
 import Link from "next/link";
 import SocialSection from "@/app/components/SocialSection";
 import type { Metadata } from "next";
-import Script from "next/script";
+
 
 export const metadata: Metadata = {
     alternates: {
@@ -45,22 +45,19 @@ export const metadata: Metadata = {
 export default function AboutPage() {
     return (
         <main>
-            <Script
-                id="about-person-schema"
+            <script
                 type="application/ld+json"
-                strategy="afterInteractive"
                 dangerouslySetInnerHTML={{
                     __html: JSON.stringify({
                         "@context": "https://schema.org",
                         "@type": "Person",
                         name: "Ram",
                         url: "https://thenomadicstory.com/about-me",
-                        "mainEntityOfPage": "https://thenomadicstory.com/about-me",
-                        "image": "https://thenomadicstory.com/images/ram-portrait.jpg",
+                        image: "https://thenomadicstory.com/images/ram-portrait.jpg",
                         jobTitle: "Travel Blogger and Street Photographer",
-                        "worksFor": {
+                        worksFor: {
                             "@type": "Organization",
-                            "name": "The Nomadic Story"
+                            name: "The Nomadic Story"
                         },
                         sameAs: [
                             "https://instagram.com/thenomadicstory",
