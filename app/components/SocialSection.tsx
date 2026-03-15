@@ -1,4 +1,5 @@
-﻿import SocialShare from "./SocialShare";
+﻿"use client";
+import SocialShare from "./SocialShare";
 import FollowMe from "./FollowMe";
 
 export default function SocialSection({ title }: { title: string }) {
