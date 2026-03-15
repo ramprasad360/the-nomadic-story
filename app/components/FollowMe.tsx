@@ -4,10 +4,10 @@ import { FaInstagram, FaXTwitter } from "react-icons/fa6";
 
 export default function FollowMe() {
     return (
-        <div className="text-center">
+        <div className="text-center mt-12">
 
             <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-6">
-                Follow The Journey
+                FOLLOW THE JOURNEY
             </p>
 
             <div className="flex justify-center items-center gap-8">
@@ -31,6 +31,7 @@ export default function FollowMe() {
                 </a>
 
             </div>
+
         </div>
     );
 }
