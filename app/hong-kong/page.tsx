@@ -1,151 +1,295 @@
 import Image from "next/image";
+import Link from "next/link";
 import SocialSection from "@/app/components/SocialSection";
 import type { Metadata } from "next";
+import Script from "next/script";
 
 export const metadata: Metadata = {
     alternates: {
-        canonical: "https://thenomadicstory.com/hong-kong",
+        canonical: "https://thenomadicstory.com/blog/hong-kong",
     },
-    title: "Hong Kong Travel Guide",
+    title: "Hong Kong | Cities. Culture. Perspective.",
     description:
-        "A curated Hong Kong travel guide covering culture, street photography, skyline views, and essential travel tips.",
+        "Explore Hong Kong through street photography, skyline views, markets, and cultural neighborhoods. A travel story and photography guide from The Nomadic Story.",
+    authors: [{ name: "Ram", url: "https://thenomadicstory.com/about" }],
+
     openGraph: {
-        title: "Hong Kong Travel Guide | The Nomadic Story",
+        title: "Hong Kong | The Nomadic Story",
         description:
-            "Explore Hong Kong through culture, architecture, and street photography.",
+            "A considered exploration of Hong Kong's neon-lit streets, layered architecture, and cultural pulse.",
+        siteName: "The Nomadic Story",
+        type: "article",
+        url: "https://thenomadicstory.com/blog/hong-kong",
         images: [
             {
-                url: "/images/hong_kong_1.jpg",
+                url: "/images/hong-kong-city-skyline-view.png",
                 width: 1200,
                 height: 630,
-                alt: "Hong Kong Skyline",
+                alt: "Hong Kong skyline at dusk with Victoria Harbour reflections",
             },
         ],
+    },
+
+    twitter: {
+        card: "summary_large_image",
+        title: "Hong Kong | The Nomadic Story",
+        description:
+            "Street photography, skyline reflections, and cultural rhythms from Hong Kong.",
+        images: ["/images/hong-kong-city-skyline-view.png"],
     },
 };
 
 export default function HongKongPage() {
+    const galleryImages = [
+        { src: "/images/hong-kong-city-skyline-view.png", alt: "Hong Kong skyline from Victoria Peak" },
+        { src: "/images/bruce-lee-statue-victoria-harbour-hong-kong.jpg", alt: "Bruce Lee statue at Victoria Harbour Hong Kong" },
+        { src: "/images/hong-kong-orange-tram-street.jpg", alt: "Orange tram crossing street in Hong Kong" },
+        { src: "/images/hong-kong-blue-tram-city-street.jpg", alt: "Blue tram on Hong Kong street" },
+        { src: "/images/hong-kong-night-street-bus.jpg", alt: "Night street bus scene in Hong Kong" },
+        { src: "/images/hong-kong-old-man-street-photography.jpg", alt: "Old man walking on a Hong Kong street" },
+        { src: "/images/hong-kong-local-market-shop.png", alt: "Local market shop in Hong Kong" },
+        { src: "/images/hong-kong-street-coffee-shop.jpg", alt: "Coffee shop street scene in Hong Kong" },
+    ];
+
     return (
-        <main className="min-h-screen bg-white text-gray-800 font-[Taviraj,Georgia,Times,serif]">
+        <main>
+
+            {/* JSON-LD SEO */}
+            <Script
+                id="hong-kong-structured-data"
+                type="application/ld+json"
+                strategy="afterInteractive"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "Article",
+                        headline: "Hong Kong | The Nomadic Story",
+                        description: "Street photography and travel reflections from Hong Kong.",
+                        mainEntityOfPage: "https://thenomadicstory.com/blog/hong-kong",
+                        author: {
+                            "@type": "Person",
+                            name: "Ram",
+                        },
+                        publisher: {
+                            "@type": "Organization",
+                            name: "The Nomadic Story",
+                            logo: {
+                                "@type": "ImageObject",
+                                url: "https://thenomadicstory.com/icon.svg"
+                            }
+                        },
+                        image: "https://thenomadicstory.com/images/hong-kong-city-skyline-view.png",
+                    }),
+                }}
+            />
 
             {/* HERO SECTION */}
-            <section className="relative w-full h-[75vh]">
+            <section className="relative w-full min-h-[60vh] sm:min-h-[70vh] md:h-screen overflow-hidden">
                 <Image
-                    src="/images/hong_kong_1.jpg"
-                    alt="Hong Kong Street"
-                    fill
+                    src="/images/hong-kong-city-skyline-view.png"
+                    alt="Hong Kong skyline symphony at dusk - Victoria Harbour reflections"
                     priority
+                    fill
+                    sizes="100vw"
                     className="object-cover"
+                    quality={90}
                 />
-                <div className="absolute inset-0 bg-black/40 flex flex-col justify-center items-center text-white text-center px-6">
-                    <h1 className="text-4xl md:text-6xl tracking-widest uppercase mb-4">
+
+                <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/55 to-black/75 flex flex-col justify-end items-center text-white text-center px-4 pb-12 md:pb-20">
+                    <p className="text-xs tracking-[0.3em] uppercase text-white/80 mb-3">
+                        The Nomadic Story
+                    </p>
+
+                    <h1 className="text-4xl md:text-7xl font-light tracking-[0.1em] uppercase mb-3">
                         Hong Kong
                     </h1>
-                    <p className="text-lg md:text-xl tracking-wide">
-                        Where Neon Lights Meet Timeless Tradition
+
+                    <div className="w-16 h-[2px] bg-[#c6a75e] mb-6" />
+
+                    <p className="text-base md:text-2xl tracking-widest max-w-3xl">
+                        Where Vertical Dreams Meet Horizontal Lives
                     </p>
                 </div>
             </section>
 
-            {/* INTRO SECTION */}
-            <section className="max-w-4xl mx-auto px-6 py-16 text-center">
-                <p className="text-lg leading-relaxed">
-                    Hong Kong is a city of contrasts — towering glass skyscrapers rising above
-                    century-old temples, neon-lit streets blending with traditional markets,
-                    and a fast-paced urban rhythm softened by coastal views and mountain peaks.
-                    Whether you are a street photographer, a food lover, or an urban explorer,
-                    Hong Kong offers an endlessly dynamic visual story.
+            {/* INTRO */}
+            <section className="max-w-4xl mx-auto px-6 py-20 text-center">
+                <p className="text-gray-600 text-lg leading-relaxed mb-10">
+                    Hong Kong hums with tension — glass towers piercing low-hanging clouds,
+                    neon characters flickering above dai pai dong steam, trams rattling
+                    through centuries-old markets.
+                </p>
+
+                <div className="w-16 h-[2px] bg-[#c6a75e] mx-auto mb-10" />
+
+                <p className="text-gray-500 italic text-lg">
+                    A place where East meets West, past meets future.
                 </p>
             </section>
 
-            {/* QUICK FACTS */}
-            <section className="bg-gray-50 py-14">
-                <div className="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 text-center md:text-left">
-                    <div>
-                        <h2 className="text-2xl uppercase tracking-widest mb-4">Quick Facts</h2>
-                        <ul className="space-y-2 text-sm tracking-wide">
-                            <li><strong>Country:</strong> China (SAR)</li>
-                            <li><strong>Currency:</strong> HKD</li>
-                            <li><strong>Languages:</strong> Cantonese, English</li>
-                            <li><strong>Best Time:</strong> Oct – Dec</li>
-                            <li><strong>Ideal Stay:</strong> 3–4 Days</li>
-                            <li><strong>Transport:</strong> MTR, Star Ferry</li>
-                        </ul>
+            {/* URBAN RHYTHMS */}
+            <section className="max-w-6xl mx-auto px-6 py-24">
+
+                <div className="grid md:grid-cols-2 gap-16 items-center">
+
+                    {/* IMAGE */}
+                    <div className="flex flex-col order-1 md:order-2">
+
+                        <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
+                            <Image
+                                src="/images/hong-kong-local-market-shop.png"
+                                alt="Street market shop in Mong Kok district, Hong Kong"
+                                fill
+                                sizes="(max-width:768px) 100vw, 50vw"
+                                /*className="object-cover hover:scale-105 transition-all duration-700"*/
+                                className= "object-cover transition-transform duration-700 hover:scale-105"
+                                quality={90}
+                            />
+                        </div>
+
+                        {/* PHOTO CAPTION */}
+                        <p className="mt-4 text-xs tracking-[0.2em] uppercase text-gray-400 text-center md:text-left">
+                            Mong Kok Street Market • Hong Kong
+                        </p>
+
                     </div>
-                    <div className="text-sm leading-relaxed">
-                        Hong Kong blends Eastern heritage with global modernity.
-                        Efficient public transport, world-class food, and cinematic
-                        street scenes make it one of Asia’s most compelling destinations.
+
+                    {/* TEXT */}
+                    <div className="order-2 md:order-1">
+
+                        <h2 className="font-light text-3xl md:text-4xl tracking-[0.15em] uppercase text-gray-900 mb-6">
+                            Urban Rhythms
+                        </h2>
+
+                        <div className="w-16 h-[2px] bg-[#c6a75e] mb-8" />
+
+                        <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                            Walk through Mong Kok at dusk and the city begins to reveal its pulse.
+                            Neon signs glow above narrow streets while small vendors display herbs,
+                            dried seafood, and local goods beneath buzzing fluorescent lights.
+                        </p>
+
+                        <p className="text-gray-600 text-lg leading-relaxed">
+                            In Hong Kong, everyday life unfolds vertically and horizontally —
+                            balconies stacked above markets, trams gliding past storefronts,
+                            and millions of quiet routines forming the rhythm of the city.
+                        </p>
+
                     </div>
+
                 </div>
+
             </section>
 
-            {/* PHOTO GALLERY */}
-            <section className="max-w-6xl mx-auto px-6 py-16">
-                <h2 className="text-2xl uppercase tracking-widest text-center mb-10">
-                    Street Moments
-                </h2>
+            {/* CITY IN MOTION */}
+            <section className="max-w-6xl mx-auto px-6 py-24">
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div className="relative aspect-[4/5]">
-                        <Image
-                            src="/images/hong_kong_1.jpg"
-                            alt="Hong Kong Cafe"
-                            fill
-                            className="object-cover rounded-lg"
-                        />
-                    </div>
-
-                    <div className="relative aspect-[4/5]">
-                        <Image
-                            src="/images/hong_kong_2.jpg"
-                            alt="Hong Kong Street Sign"
-                            fill
-                            className="object-cover rounded-lg"
-                        />
-                    </div>
-
-                    <div className="relative aspect-[4/5]">
-                        <Image
-                            src="/images/hong_kong_3.jpg"
-                            alt="Hong Kong Market"
-                            fill
-                            className="object-cover rounded-lg"
-                        />
-                    </div>
-                </div>
-            </section>
-
-            {/* STREET PHOTOGRAPHY */}
-            <section className="bg-gray-50 py-16">
-                <div className="max-w-4xl mx-auto px-6 text-center">
-                    <h2 className="text-2xl uppercase tracking-widest mb-6">
-                        Street Photography in Hong Kong
+                <div className="text-center mb-16">
+                    <h2 className="font-light text-3xl md:text-4xl tracking-[0.2em] uppercase text-gray-900 mb-6">
+                        City in Motion
                     </h2>
-                    <p className="text-lg leading-relaxed">
-                        The city’s vertical architecture, layered signage, and constant motion
-                        create powerful compositions. Evening light enhances reflections,
-                        especially after rain. Markets, trams, and neon-lit cafes offer endless
-                        storytelling opportunities.
-                    </p>
+                    <div className="w-16 h-[2px] bg-[#c6a75e] mx-auto" />
+                </div>
+
+                {/* PREMIUM GALLERY */}
+                <div className="relative">
+                        <div className="overflow-x-auto scroll-smooth pb-6 cursor-grab active:cursor-grabbing custom-scrollbar scroll-pl-6">
+                        <div className="flex gap-6 snap-x snap-mandatory px-2">
+
+                            {galleryImages.map(({ src, alt }, index) => (
+                                <div
+                                    key={src}
+                                    className={`relative
+                    ${index === 0
+                                            ? "min-w-[95%] sm:min-w-[70%] md:min-w-[50%]"
+                                            : "min-w-[85%] sm:min-w-[60%] md:min-w-[40%] lg:min-w-[30%]"
+                                        }
+                    aspect-[4/5] rounded-2xl overflow-hidden shadow-xl snap-center flex-shrink-0`}
+                                >
+
+                                    <Image
+                                        src={src}
+                                        alt={alt}
+                                        fill
+                                        sizes="(max-width:768px) 95vw, (max-width:1024px) 60vw, 40vw"
+                                        className="object-cover transition-transform duration-700 hover:scale-105"
+                                        quality={80}
+                                        priority={index === 0}
+                                    />
+
+                                </div>
+                            ))}
+
+                        </div>
+                    </div>
+
+                    {/* EDGE FADES */}
+                    <div className="pointer-events-none absolute left-0 top-0 h-full w-20 bg-gradient-to-r from-white to-transparent" />
+                    <div className="pointer-events-none absolute right-0 top-0 h-full w-20 bg-gradient-to-l from-white to-transparent" />
+
                 </div>
             </section>
 
-            {/* TRAVEL TIPS */}
-            <section className="max-w-4xl mx-auto px-6 py-16 text-center">
-                <h2 className="text-2xl uppercase tracking-widest mb-6">
-                    Travel Tips
-                </h2>
+            {/* PHOTOGRAPHY COLLECTION */}
+            <section className="text-center py-16 px-6">
 
-                <ul className="space-y-3 text-sm tracking-wide mb-12">
-                    <li>• Get an Octopus Card for transport convenience</li>
-                    <li>• Explore Central and Mong Kok by foot</li>
-                    <li>• Visit Victoria Peak before sunset</li>
-                    <li>• Carry light rain protection for sudden showers</li>
-                </ul>
+                <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-4">
+                    Photography Collection
+                </p>
 
-                {/* ✅ Clean Combined Social Section */}
-                <SocialSection title="Hong Kong Travel Guide | The Nomadic Story" />
+                <h3 className="text-2xl md:text-3xl font-light tracking-wide text-gray-900 mb-6">
+                    Explore Hong Kong Through My Lens
+                </h3>
+
+                {/* NEW DESCRIPTION */}
+                <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed mb-10">
+                    A curated collection of street moments, city architecture, and everyday
+                    life captured across Hong Kong — from towering skylines to the quiet
+                    rhythm of its markets and neighborhoods.
+                </p>
+
+                <Link
+                    href="/gallery/hong-kong"
+                    className="inline-block border border-[#c6a75e] px-6 py-3 text-xs tracking-[0.25em] uppercase text-[#c6a75e] hover:bg-[#c6a75e] hover:text-white transition duration-500"
+                >
+                    View Full Hong Kong Photo Gallery
+                </Link>
+
+            </section>
+
+            {/* PLAN YOUR TRIP */}
+            <section className="py-20 px-6 text-center">
+                <div className="max-w-3xl mx-auto">
+                    <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-4">
+                        Planning Your Trip
+                    </p>
+                    <h3 className="text-2xl md:text-3xl font-light tracking-wide text-gray-900 mb-6">
+                        A Short Itinerary for Hong Kong
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed mb-8">
+                        If you’re visiting Hong Kong for the first time,
+                        this short itinerary highlights the city’s skyline,
+                        historic trams, neon-lit markets, and local food culture.
+                    </p>
+                    <Link
+                        href="/blog/hong-kong-3-day-itinerary"
+                        className="inline-block border border-[#c6a75e] px-6 py-3 text-xs tracking-[0.25em] uppercase text-[#c6a75e] hover:bg-[#c6a75e] hover:text-white transition duration-500"
+                    >
+                        View Itinerary
+                    </Link>
+                </div>
+            </section>
+
+            {/* FINAL REFLECTION */}
+            <section className="py-24 px-6 text-center">
+                <div className="max-w-3xl mx-auto">
+                    <blockquote className="italic text-2xl md:text-3xl text-gray-800 mb-8 font-light leading-relaxed">
+                        Hong Kong taught me photography is not about waiting for light.
+                        It’s about finding rhythm in the chaos.
+                    </blockquote>
+                    <div className="w-16 h-[2px] bg-[#c6a75e] mx-auto mb-12" />
+                    <SocialSection title="Hong Kong | The Nomadic Story" />
+                </div>
             </section>
 
         </main>

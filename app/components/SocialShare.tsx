@@ -1,20 +1,25 @@
 ﻿"use client";
 
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
+import { usePathname, useSearchParams } from "next/navigation";
 import { FaXTwitter, FaFacebookF, FaWhatsapp, FaLink } from "react-icons/fa6";
 
 export default function SocialShare({ title }: { title: string }) {
-    const [url, setUrl] = useState<string | null>(null);
+    const pathname = usePathname();
+    const searchParams = useSearchParams();
     const [copied, setCopied] = useState(false);
 
-    // Get current URL safely on client
-    useEffect(() => {
-        if (typeof window !== "undefined") {
-            setUrl(window.location.href);
-        }
-    }, []);
+    // ✅ Build full URL safely (no window usage)
+    const queryString = searchParams?.toString();
+    const baseUrl =
+        process.env.NEXT_PUBLIC_SITE_URL || "https://thenomadicstory.com";
 
-    // Auto-hide toast after 2 seconds
+    const url = `${baseUrl}${pathname}${queryString ? `?${queryString}` : ""
+        }`;
+
+    const encodedUrl = encodeURIComponent(url);
+    const encodedTitle = encodeURIComponent(title);
+
     useEffect(() => {
         if (!copied) return;
 
@@ -26,8 +31,6 @@ export default function SocialShare({ title }: { title: string }) {
     }, [copied]);
 
     const copyLink = async () => {
-        if (!url) return;
-
         try {
             await navigator.clipboard.writeText(url);
             setCopied(true);
@@ -36,28 +39,13 @@ export default function SocialShare({ title }: { title: string }) {
         }
     };
 
-    // Prevent layout shift before URL loads
-    if (!url) {
-        return <div className="text-center h-[120px]" />;
-    }
-
-    const encodedUrl = encodeURIComponent(url);
-    const encodedTitle = encodeURIComponent(title);
-
     return (
         <div className="text-center relative">
-
-             {/*Divider */}
-            {/*<div className="w-20 h-[1px] bg-gray-100 mx-auto mb-10"></div>*/}
-
-            {/* Title */}
             <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-6">
                 Share This Article
             </p>
 
-            {/* Icons */}
             <div className="flex justify-center items-center gap-6">
-
                 <a
                     href={`https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`}
                     target="_blank"
@@ -88,10 +76,8 @@ export default function SocialShare({ title }: { title: string }) {
                 <button onClick={copyLink} className="social-icon">
                     <FaLink size={13} />
                 </button>
-
             </div>
 
-            {/* Toast */}
             <div
                 className={`absolute left-1/2 -translate-x-1/2 top-full mt-6 
                 px-5 py-2 text-[10px] tracking-[0.25em] uppercase
@@ -104,7 +90,6 @@ export default function SocialShare({ title }: { title: string }) {
             >
                 Link Copied
             </div>
-
         </div>
     );
 }

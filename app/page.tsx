@@ -2,7 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import SocialSection from "@/app/components/SocialSection";
 import type { Metadata } from "next";
-
+import Script from "next/script";
+    
 export const metadata: Metadata = {
     title: "Cities. Culture. Perspective.",
     description:
@@ -14,7 +15,9 @@ export const metadata: Metadata = {
         title: "The Nomadic Story",
         description:
             "An editorial travel journal exploring cities, culture, and perspective.",
+        siteName: "The Nomadic Story",
         url: "https://thenomadicstory.com",
+        type: "website",
         images: [
             {
                 url: "/images/og-home.jpg",
@@ -24,93 +27,110 @@ export const metadata: Metadata = {
             },
         ],
     },
+
+    twitter: {
+        card: "summary_large_image",
+        title: "The Nomadic Story",
+        description:
+            "An editorial travel journal exploring cities, culture, and perspective.",
+        images: ["/images/og-home.jpg"],
+    },
 };
 
 export default function Home() {
     return (
         <>
-            {/* ✅ Structured Data (WebSite Schema) */}
-            <script
+            {/* Structured Data */}
+            <Script
+                id="website-structured-data"
                 type="application/ld+json"
+                strategy="afterInteractive"
                 dangerouslySetInnerHTML={{
                     __html: JSON.stringify({
                         "@context": "https://schema.org",
                         "@type": "WebSite",
                         name: "The Nomadic Story",
                         url: "https://thenomadicstory.com",
-                        description:
-                            "A luxury editorial travel journal exploring cities, culture, photography, and perspective.",
                         author: {
                             "@type": "Person",
                             name: "Ram",
                         },
+                        "publisher": {
+                            "@type": "Organization",
+                            "name": "The Nomadic Story",
+                            "logo": {
+                                "@type": "ImageObject",
+                                "url": "https://thenomadicstory.com/icon.svg"
+                            }
+                        },
+                        sameAs: [
+                            "https://instagram.com/thenomadicstory",
+                            "https://twitter.com/thenomadicstory",
+                        ],
                     }),
                 }}
             />
 
-            <main className="bg-white">
-                {/* ================= HERO SECTION ================= */}
-                <section className="max-w-5xl mx-auto px-6 pt-14 pb-28 text-center">
-                    <p className="text-xs tracking-[0.35em] uppercase text-gray-400 mb-6">
+            <main>
+
+                {/* ================= HERO ================= */}
+                <section className="max-w-4xl md:max-w-5xl mx-auto px-6 pt-16 sm:pt-20 pb-20 sm:pb-24 md:pb-28 text-center">
+
+                    <p className="text-xs tracking-[0.3em] sm:tracking-[0.35em] uppercase text-gray-400 mb-6">
                         The Nomadic Story
                     </p>
 
-                    <h1
-                        className="font-[Taviraj,Georgia,Times,serif] 
-            text-5xl md:text-6xl 
-            font-light 
-            tracking-[0.06em] 
-            text-gray-900"
-                    >
+                    <h1 className="text-4xl sm:text-5xl md:text-6xl font-light tracking-[0.06em] text-gray-900 leading-tight">
                         Cities. Culture. Perspective.
                     </h1>
 
-                    <div className="w-16 h-[2px] bg-[#c6a75e] mx-auto mt-8 mb-12" />
+                    <div className="w-14 sm:w-16 md:w-20 h-[2px] bg-[#c6a75e] mx-auto mt-6 sm:mt-8 mb-10 sm:mb-12" />
 
-                    <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed text-lg">
+                    <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed text-base sm:text-lg">
                         An editorial travel journal exploring cities through culture,
                         photography, and lived experience — beyond landmarks and guidebooks.
                     </p>
 
-                    <p className="text-gray-400 max-w-2xl mx-auto leading-relaxed text-sm mt-6 italic">
+                    <p className="text-gray-400 max-w-xl mx-auto leading-relaxed text-sm mt-6 italic">
                         For those who travel with intention.
                     </p>
                 </section>
 
-                {/* ================= ABOUT SECTION ================= */}
-                <section className="max-w-6xl mx-auto px-6 pb-28 grid md:grid-cols-2 gap-16 items-center">
-                    <div className="relative h-[500px] w-full">
+                {/* ================= ABOUT ================= */}
+                <section className="max-w-6xl mx-auto px-6 pb-20 sm:pb-24 md:pb-28 grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+
+                    <div className="relative aspect-[4/5] md:aspect-auto md:h-[500px] w-full rounded-2xl overflow-hidden">
                         <Image
-                            src="/images/ram_1.jpg"
-                            alt="Ram Travel Portrait"
+                            src="/images/ram-travel-photographer-the-nomadic-story.jpg"
+                            alt="Ram – travel photographer and founder of The Nomadic Story"
                             fill
+                            priority
+                            sizes="(max-width: 768px) 100vw, 50vw"
                             className="object-cover"
                         />
                     </div>
 
                     <div>
-                        <h2 className="font-[Taviraj,Georgia,Times,serif] text-3xl tracking-[0.2em] uppercase font-light text-gray-900">
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl tracking-[0.15em] uppercase font-light text-gray-900 leading-tight">
                             The Story Behind The Journey
                         </h2>
 
-                        <div className="w-12 h-[2px] bg-[#c6a75e] mt-6 mb-8" />
+                        <div className="w-12 sm:w-14 md:w-16 h-[2px] bg-[#c6a75e] mt-6 mb-8" />
 
-                        <p className="text-gray-600 leading-relaxed mb-6">
+                        <p className="text-gray-600 leading-relaxed mb-6 text-sm sm:text-base">
                             Founded by Ram, a storyteller and observer of cultures,
                             The Nomadic Story began as a photographic archive and evolved
                             into a considered exploration of cities and their quiet details.
                         </p>
 
-                        <p className="text-gray-600 leading-relaxed mb-6">
-                            The Nomadic Story is not about destinations — it’s about experiences.
+                        <p className="text-gray-600 leading-relaxed mb-6 text-sm sm:text-base">
                             From the skyline of Hong Kong to the temples of Bali,
                             each place carries its own rhythm.
                         </p>
 
-                        <p className="text-gray-500 leading-relaxed mb-8">
+                        <p className="text-gray-500 leading-relaxed mb-8 text-sm sm:text-base">
                             This journal is a collection of reflections — a visual and written
                             archive of places that inspire curiosity, calm, and connection.
-                            It is an invitation to travel deeper, with intention.
                         </p>
 
                         <Link
@@ -122,77 +142,79 @@ export default function Home() {
                     </div>
                 </section>
 
+ 
                 {/* ================= FEATURED DESTINATIONS ================= */}
-                <section className="max-w-6xl mx-auto px-6 pb-28 text-center">
-                    <h2 className="font-[Taviraj,Georgia,Times,serif] text-3xl tracking-[0.2em] uppercase font-light text-gray-900">
+                <section className="max-w-6xl mx-auto px-6 pb-20 sm:pb-24 md:pb-28 text-center">
+
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl tracking-[0.15em] uppercase font-light text-gray-900">
                         Featured Destinations
                     </h2>
 
-                    <div className="w-16 h-[2px] bg-[#c6a75e] mx-auto mt-6 mb-8" />
+                    <div className="w-14 sm:w-16 md:w-20 h-[2px] bg-[#c6a75e] mx-auto mt-6 mb-8" />
 
-                    <p className="text-gray-500 max-w-2xl mx-auto mb-16 leading-relaxed">
+                    <p className="text-gray-500 max-w-2xl mx-auto mb-14 sm:mb-16 leading-relaxed text-sm sm:text-base">
                         A curated collection of cities that left a lasting impression —
-                        each explored through culture, architecture, and lived moments.
+                        explored through culture and lived moments.
                     </p>
 
-                    <div className="grid md:grid-cols-3 gap-10">
-                        <Link href="/hong-kong" className="group">
-                            <div className="relative h-[380px] overflow-hidden">
-                                <Image
-                                    src="/images/hong_kong_4.jpg"
-                                    alt="Hong Kong"
-                                    fill
-                                    className="object-cover group-hover:scale-105 transition duration-700"
-                                />
-                            </div>
-                            <h3 className="mt-6 text-lg tracking-[0.2em] uppercase group-hover:text-[#c6a75e] transition">
-                                Hong Kong
-                            </h3>
-                        </Link>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
 
-                        <Link href="/bali" className="group">
-                            <div className="relative h-[380px] overflow-hidden">
-                                <Image
-                                    src="/images/bali_1.jpg"
-                                    alt="Bali"
-                                    fill
-                                    className="object-cover group-hover:scale-105 transition duration-700"
-                                />
-                            </div>
-                            <h3 className="mt-6 text-lg tracking-[0.2em] uppercase group-hover:text-[#c6a75e] transition">
-                                Bali
-                            </h3>
-                        </Link>
+                        {[
+                            { href: "/blog/hong-kong", img: "/images/bruce-lee-statue-victoria-harbour-hong-kong.jpg", title: "Hong Kong" },
+                            { href: "/bali", img: "/images/bali-gates-of-heaven-temple-reflection.jpg", title: "Bali" },
+                            { href: "/seoul", img: "/images/seoul-traditional-street-architecture.jpg", title: "Seoul" },
+                        ].map((item) => (
 
-                        <Link href="/seoul" className="group">
-                            <div className="relative h-[380px] overflow-hidden">
-                                <Image
-                                    src="/images/seoul_1.jpg"
-                                    alt="Seoul"
-                                    fill
-                                    className="object-cover group-hover:scale-105 transition duration-700"
-                                />
-                            </div>
-                            <h3 className="mt-6 text-lg tracking-[0.2em] uppercase group-hover:text-[#c6a75e] transition">
-                                Seoul
-                            </h3>
-                        </Link>
+                            <Link key={item.href} href={item.href} className="group cursor-pointer">
+
+                                <div className="relative aspect-[4/5] overflow-hidden rounded-xl">
+
+                                    <Image
+                                        src={item.img}
+                                        alt={`${item.title} travel photography`}
+                                        fill
+                                        sizes="(max-width: 768px) 100vw, 33vw"
+                                        className="object-cover transition-transform duration-700 md:group-hover:scale-105"
+                                    />
+
+                                    {/* Gradient Overlay */}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 md:group-hover:opacity-100 transition duration-500" />
+
+                                    {/* Destination Title */}
+                                    <div className="absolute bottom-6 left-0 right-0 text-center">
+                                        <h3 className="text-white text-base sm:text-lg tracking-[0.35em] uppercase opacity-0 md:group-hover:opacity-100 transition duration-500">
+                                            {item.title}
+                                        </h3>
+                                    </div>
+
+                                </div>
+
+                            </Link>
+
+                        ))}
+
                     </div>
+
                 </section>
 
                 {/* ================= SIGNATURE QUOTE ================= */}
-                <section className="bg-gray-50 pt-24 pb-28 text-center px-6">
-                    <p className="font-[Taviraj,Georgia,Times,serif] text-2xl md:text-3xl italic text-gray-800 max-w-3xl mx-auto">
+                <section className="bg-gray-50 py-16 sm:py-20 md:py-24 text-center px-6">
+
+                    <p className="text-xl sm:text-2xl md:text-3xl italic text-gray-800 max-w-3xl mx-auto font-light leading-relaxed">
                         “Travel is not about movement — it’s about perspective.”
                     </p>
 
-                    <p className="text-gray-500 mt-8 max-w-2xl mx-auto leading-relaxed">
-                        Every journey changes us quietly. The Nomadic Story exists
-                        to preserve those transformations — one destination at a time.
+                    <p className="text-gray-500 mt-8 max-w-2xl mx-auto leading-relaxed text-sm sm:text-base">
+                        Every journey changes us quietly.
+                        The Nomadic Story exists to preserve those transformations —
+                        one destination at a time.
                     </p>
 
-                    <SocialSection title="The Nomadic Story - Travel Journal" />
+                    <div className="mt-12">
+                        <SocialSection title="The Nomadic Story - Travel Journal" />
+                    </div>
                 </section>
+
             </main>
         </>
     );
