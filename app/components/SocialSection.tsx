@@ -1,15 +1,19 @@
 ﻿"use client";
+
 import SocialShare from "./SocialShare";
 import FollowMe from "./FollowMe";
+import { Suspense } from "react";
 
 export default function SocialSection({ title }: { title: string }) {
     return (
         <div className="mt-16 text-center">
-            <SocialShare title={title} />
 
-            <div className="w-12 h-[1px] bg-gray-200 mx-auto my-12"></div>
+            <Suspense fallback={null}>
+                <SocialShare title={title} />
+            </Suspense>
 
             <FollowMe />
+
         </div>
     );
 }

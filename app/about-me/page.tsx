@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import Script from "next/script";
 import SocialSection from "@/app/components/SocialSection";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
     alternates: {
@@ -276,7 +277,9 @@ export default function AboutPage() {
 
                     <div className="w-16 h-[2px] bg-[#c6a75e] mx-auto mb-12" />
 
-                    <SocialSection title="About Me | The Nomadic Story" />
+                    <Suspense fallback={null}>
+                        <SocialSection title="About Me | The Nomadic Story" />
+                    </Suspense>
 
                 </div>
             </section>
