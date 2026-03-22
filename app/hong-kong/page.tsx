@@ -3,14 +3,27 @@ import Link from "next/link";
 import SocialSection from "@/app/components/SocialSection";
 import type { Metadata } from "next";
 import Script from "next/script";
+import GallerySlider from "@/app/components/GallerySlider";
 
 export const metadata: Metadata = {
     alternates: {
-        canonical: "https://thenomadicstory.com/blog/hong-kong",
+        canonical: "https://thenomadicstory.com/hong-kong",
     },
+
     title: "Hong Kong | Cities. Culture. Perspective.",
+
     description:
         "Explore Hong Kong through street photography, skyline views, markets, and cultural neighborhoods. A travel story and photography guide from The Nomadic Story.",
+
+    keywords: [
+        "Hong Kong travel guide",
+        "Hong Kong street photography",
+        "Hong Kong skyline Victoria Harbour",
+        "Hong Kong travel blog",
+        "Hong Kong photography locations",
+        "The Nomadic Story Hong Kong",
+    ],
+
     authors: [{ name: "Ram", url: "https://thenomadicstory.com/about" }],
 
     openGraph: {
@@ -19,7 +32,7 @@ export const metadata: Metadata = {
             "A considered exploration of Hong Kong's neon-lit streets, layered architecture, and cultural pulse.",
         siteName: "The Nomadic Story",
         type: "article",
-        url: "https://thenomadicstory.com/blog/hong-kong",
+        url: "https://thenomadicstory.com/hong-kong",
         images: [
             {
                 url: "/images/hong-kong-city-skyline-view.png",
@@ -41,19 +54,38 @@ export const metadata: Metadata = {
 
 export default function HongKongPage() {
     const galleryImages = [
-        { src: "/images/hong-kong-city-skyline-view.png", alt: "Hong Kong skyline from Victoria Peak" },
-        { src: "/images/bruce-lee-statue-victoria-harbour-hong-kong.jpg", alt: "Bruce Lee statue at Victoria Harbour Hong Kong" },
-        { src: "/images/hong-kong-orange-tram-street.jpg", alt: "Orange tram crossing street in Hong Kong" },
-        { src: "/images/hong-kong-blue-tram-city-street.jpg", alt: "Blue tram on Hong Kong street" },
-        { src: "/images/hong-kong-night-street-bus.jpg", alt: "Night street bus scene in Hong Kong" },
-        { src: "/images/hong-kong-old-man-street-photography.jpg", alt: "Old man walking on a Hong Kong street" },
-        { src: "/images/hong-kong-local-market-shop.png", alt: "Local market shop in Hong Kong" },
-        { src: "/images/hong-kong-street-coffee-shop.jpg", alt: "Coffee shop street scene in Hong Kong" },
+        {
+            src: "/images/hong-kong-city-skyline-view.png",
+            alt: "Hong Kong skyline from Victoria Peak",
+        },
+        {
+            src: "/images/bruce-lee-statue-victoria-harbour-hong-kong.jpg",
+            alt: "Bruce Lee statue at Victoria Harbour Hong Kong",
+        },
+        {
+            src: "/images/hong-kong-orange-tram-street.jpg",
+            alt: "Orange tram crossing street in Hong Kong",
+        },
+        {
+            src: "/images/hong-kong-blue-tram-city-street.jpg",
+            alt: "Blue tram on Hong Kong street",
+        },
+        {
+            src: "/images/hong-kong-night-street-bus.jpg",
+            alt: "Night street bus scene in Hong Kong",
+        },
+        {
+            src: "/images/hong-kong-old-man-street-photography.jpg",
+            alt: "Old man walking on a Hong Kong street",
+        },
+        {
+            src: "/images/hong-kong-local-market-shop.png",
+            alt: "Local market shop in Hong Kong",
+        },
     ];
 
     return (
         <main>
-
             {/* JSON-LD SEO */}
             <Script
                 id="hong-kong-structured-data"
@@ -65,7 +97,7 @@ export default function HongKongPage() {
                         "@type": "Article",
                         headline: "Hong Kong | The Nomadic Story",
                         description: "Street photography and travel reflections from Hong Kong.",
-                        mainEntityOfPage: "https://thenomadicstory.com/blog/hong-kong",
+                        mainEntityOfPage: "https://thenomadicstory.com/hong-kong",
                         author: {
                             "@type": "Person",
                             name: "Ram",
@@ -75,10 +107,11 @@ export default function HongKongPage() {
                             name: "The Nomadic Story",
                             logo: {
                                 "@type": "ImageObject",
-                                url: "https://thenomadicstory.com/icon.svg"
-                            }
+                                url: "https://thenomadicstory.com/icon.svg",
+                            },
                         },
-                        image: "https://thenomadicstory.com/images/hong-kong-city-skyline-view.png",
+                        image:
+                            "https://thenomadicstory.com/images/hong-kong-city-skyline-view.png",
                     }),
                 }}
             />
@@ -129,34 +162,25 @@ export default function HongKongPage() {
 
             {/* URBAN RHYTHMS */}
             <section className="max-w-6xl mx-auto px-6 py-24">
-
                 <div className="grid md:grid-cols-2 gap-16 items-center">
-
-                    {/* IMAGE */}
                     <div className="flex flex-col order-1 md:order-2">
-
                         <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
                             <Image
                                 src="/images/hong-kong-local-market-shop.png"
                                 alt="Street market shop in Mong Kok district, Hong Kong"
                                 fill
                                 sizes="(max-width:768px) 100vw, 50vw"
-                                /*className="object-cover hover:scale-105 transition-all duration-700"*/
-                                className= "object-cover transition-transform duration-700 hover:scale-105"
+                                className="object-cover transition-transform duration-700 hover:scale-105"
                                 quality={90}
                             />
                         </div>
 
-                        {/* PHOTO CAPTION */}
                         <p className="mt-4 text-xs tracking-[0.2em] uppercase text-gray-400 text-center md:text-left">
                             Mong Kok Street Market • Hong Kong
                         </p>
-
                     </div>
 
-                    {/* TEXT */}
                     <div className="order-2 md:order-1">
-
                         <h2 className="font-light text-3xl md:text-4xl tracking-[0.15em] uppercase text-gray-900 mb-6">
                             Urban Rhythms
                         </h2>
@@ -174,16 +198,12 @@ export default function HongKongPage() {
                             balconies stacked above markets, trams gliding past storefronts,
                             and millions of quiet routines forming the rhythm of the city.
                         </p>
-
                     </div>
-
                 </div>
-
             </section>
 
             {/* CITY IN MOTION */}
             <section className="max-w-6xl mx-auto px-6 py-24">
-
                 <div className="text-center mb-16">
                     <h2 className="font-light text-3xl md:text-4xl tracking-[0.2em] uppercase text-gray-900 mb-6">
                         City in Motion
@@ -191,48 +211,11 @@ export default function HongKongPage() {
                     <div className="w-16 h-[2px] bg-[#c6a75e] mx-auto" />
                 </div>
 
-                {/* PREMIUM GALLERY */}
-                <div className="relative">
-                        <div className="overflow-x-auto scroll-smooth pb-6 cursor-grab active:cursor-grabbing custom-scrollbar scroll-pl-6">
-                        <div className="flex gap-6 snap-x snap-mandatory px-2">
-
-                            {galleryImages.map(({ src, alt }, index) => (
-                                <div
-                                    key={src}
-                                    className={`relative
-                    ${index === 0
-                                            ? "min-w-[95%] sm:min-w-[70%] md:min-w-[50%]"
-                                            : "min-w-[85%] sm:min-w-[60%] md:min-w-[40%] lg:min-w-[30%]"
-                                        }
-                    aspect-[4/5] rounded-2xl overflow-hidden shadow-xl snap-center flex-shrink-0`}
-                                >
-
-                                    <Image
-                                        src={src}
-                                        alt={alt}
-                                        fill
-                                        sizes="(max-width:768px) 95vw, (max-width:1024px) 60vw, 40vw"
-                                        className="object-cover transition-transform duration-700 hover:scale-105"
-                                        quality={80}
-                                        priority={index === 0}
-                                    />
-
-                                </div>
-                            ))}
-
-                        </div>
-                    </div>
-
-                    {/* EDGE FADES */}
-                    <div className="pointer-events-none absolute left-0 top-0 h-full w-20 bg-gradient-to-r from-white to-transparent" />
-                    <div className="pointer-events-none absolute right-0 top-0 h-full w-20 bg-gradient-to-l from-white to-transparent" />
-
-                </div>
+                <GallerySlider images={galleryImages} />
             </section>
 
             {/* PHOTOGRAPHY COLLECTION */}
             <section className="text-center py-16 px-6">
-
                 <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-4">
                     Photography Collection
                 </p>
@@ -241,7 +224,6 @@ export default function HongKongPage() {
                     Explore Hong Kong Through My Lens
                 </h3>
 
-                {/* NEW DESCRIPTION */}
                 <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed mb-10">
                     A curated collection of street moments, city architecture, and everyday
                     life captured across Hong Kong — from towering skylines to the quiet
@@ -254,7 +236,6 @@ export default function HongKongPage() {
                 >
                     View Full Hong Kong Photo Gallery
                 </Link>
-
             </section>
 
             {/* PLAN YOUR TRIP */}
@@ -263,14 +244,17 @@ export default function HongKongPage() {
                     <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-4">
                         Planning Your Trip
                     </p>
+
                     <h3 className="text-2xl md:text-3xl font-light tracking-wide text-gray-900 mb-6">
                         A Short Itinerary for Hong Kong
                     </h3>
+
                     <p className="text-gray-600 leading-relaxed mb-8">
-                        If you’re visiting Hong Kong for the first time,
-                        this short itinerary highlights the city’s skyline,
-                        historic trams, neon-lit markets, and local food culture.
+                        If you’re visiting Hong Kong for the first time, this short itinerary
+                        highlights the city’s skyline, historic trams, neon-lit markets,
+                        and local food culture.
                     </p>
+
                     <Link
                         href="/blog/hong-kong-3-day-itinerary"
                         className="inline-block border border-[#c6a75e] px-6 py-3 text-xs tracking-[0.25em] uppercase text-[#c6a75e] hover:bg-[#c6a75e] hover:text-white transition duration-500"
@@ -287,11 +271,12 @@ export default function HongKongPage() {
                         Hong Kong taught me photography is not about waiting for light.
                         It’s about finding rhythm in the chaos.
                     </blockquote>
+
                     <div className="w-16 h-[2px] bg-[#c6a75e] mx-auto mb-12" />
+
                     <SocialSection title="Hong Kong | The Nomadic Story" />
                 </div>
             </section>
-
         </main>
     );
 }

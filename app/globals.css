@@ -10,7 +10,6 @@
     --text-muted: #6b7280;
 }
 
-
 /* ================= Dark Mode ================= */
 
 @media (prefers-color-scheme: dark) {
@@ -21,7 +20,6 @@
         --text-muted: #9ca3af;
     }
 }
-
 
 /* ================= Base Reset ================= */
 
@@ -36,10 +34,6 @@ html {
 }
 
 @layer base {
-    html {
-        scroll-behavior: smooth;
-    }
-    
     body {
         margin: 0;
         background: var(--background);
@@ -52,63 +46,70 @@ html {
     }
 }
 
-.container-page {
-    max-width: 72rem;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-}
-
-
-/* ================= Social Icon Styling ================= */
-
-.social-icon {
-    width: 36px;
-    height: 36px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid var(--border-light);
-    border-radius: 9999px;
-    color: var(--text-muted);
-    transition: all 0.3s ease;
-}
-
-    .social-icon:hover {
-        border-color: var(--accent);
-        color: var(--accent);
-        transform: translateY(-3px);
-    }
-
-
-/* ================= Selection Styling ================= */
-
-::selection {
-    background: var(--accent);
-    color: white;
-}
-
-
-/* ================= Gallery Animation ================= */
-
-@keyframes fade {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-.animate-fade {
-    animation: fade 0.3s ease-in-out;
-}
+/* ================= Components ================= */
 
 @layer components {
+
+    /* Page Container */
+    .container-page {
+        @apply max-w-6xl mx-auto px-4 md:px-6 py-12 md:py-20;
+    }
+
+    /* Typography */
+    .font-luxury {
+        font-family: Taviraj, Georgia, Times, serif;
+    }
+
+    .heading {
+        font-family: Taviraj, Georgia, Times, serif;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        font-weight: 400;
+    }
+
+    /* Luxury Button (Responsive) */
+    .btn-luxury {
+        @apply border border-[#c6a75e] text-[#c6a75e] uppercase transition-all duration-300;
+        font-family: Taviraj, Georgia, Times, serif;
+        /* Mobile */
+        font-size: 10px;
+        letter-spacing: 0.2em;
+        padding: 6px 16px;
+    }
+
+    @media (min-width: 768px) {
+        .btn-luxury {
+            font-size: 12px;
+            letter-spacing: 0.35em;
+            padding: 8px 20px;
+        }
+    }
+
+    .btn-luxury:hover {
+        @apply bg-[#c6a75e] text-white;
+    }
+
+    /* Social Icons */
+    .social-icon {
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--border-light);
+        border-radius: 9999px;
+        color: var(--text-muted);
+        transition: all 0.3s ease;
+    }
+
+        .social-icon:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+    /* Custom Scrollbar */
     .custom-scrollbar {
-        /* Firefox */
         scrollbar-width: thin;
         scrollbar-color: rgba(198, 166, 94, 0.5) transparent;
     }
@@ -122,15 +123,47 @@ html {
         }
 
         .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: rgba(198, 166, 94, 0.6); /* Matches button border/text */
+            background: rgba(198, 166, 94, 0.6);
             border-radius: 3px;
             border: 2px solid transparent;
             background-clip: content-box;
-            transition: background-color 0.2s ease; /* Matches button transition */
+            transition: background-color 0.2s ease;
         }
 
-            /* Exact "View Itinerary" button hover state */
             .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-                background: #c6a75e !important; /* Solid gold - same as button bg */
+                background: #c6a75e !important;
             }
+
+    /* Hide Scrollbar */
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+}
+
+/* ================= Utilities ================= */
+
+/* Selection */
+::selection {
+    background: var(--accent);
+    color: white;
+}
+
+/* Fade Animation */
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.animate-fade {
+    animation: fade 0.3s ease-in-out;
 }

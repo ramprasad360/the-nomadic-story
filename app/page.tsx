@@ -134,7 +134,7 @@ export default function Home() {
                         </p>
 
                         <Link
-                            href="/about"
+                            href="/about-me"
                             className="inline-block border border-[#c6a75e] px-6 py-3 text-xs tracking-[0.25em] uppercase text-[#c6a75e] hover:bg-[#c6a75e] hover:text-white transition duration-500"
                         >
                             Read My Story
@@ -160,7 +160,7 @@ export default function Home() {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
 
                         {[
-                            { href: "/blog/hong-kong", img: "/images/bruce-lee-statue-victoria-harbour-hong-kong.jpg", title: "Hong Kong" },
+                            { href: "/hong-kong", img: "/images/bruce-lee-statue-victoria-harbour-hong-kong.jpg", title: "Hong Kong" },
                             { href: "/bali", img: "/images/bali-gates-of-heaven-temple-reflection.jpg", title: "Bali" },
                             { href: "/seoul", img: "/images/seoul-traditional-street-architecture.jpg", title: "Seoul" },
                         ].map((item) => (
