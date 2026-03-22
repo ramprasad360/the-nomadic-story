@@ -65,7 +65,7 @@ export default function HongKongGallery() {
 
     /* ================= SCROLL LOCK ================= */
     useEffect(() => {
-        document.body.style.overflow =
+            document.body.style.overflow =
             selectedIndex !== null ? "hidden" : "auto";
 
         return () => {

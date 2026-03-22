@@ -298,11 +298,11 @@ export default function NavBar() {
                                 Blog
                             </Link>
                             <Link
-                                href="/about"
+                                href="/about-me"
                                 className="block py-3 hover:text-[#d4a373] transition-colors border-b border-gray-100 last:border-b-0"
                                 onClick={closeAllMenus}
                             >
-                                About
+                                About Me
                             </Link>
                             <Link
                                 href="/contact"
