@@ -49,7 +49,31 @@ export default function HongKongGallery() {
         );
     }, [images.length]);
 
-    /* ================= KEYBOARD NAVIGATION ================= */
+    /* SWIPE */
+    const [touchStart, setTouchStart] = useState<number | null>(null);
+    const [touchEnd, setTouchEnd] = useState<number | null>(null);
+
+    const minSwipeDistance = 50;
+
+    const onTouchStart = (e: React.TouchEvent) => {
+        setTouchEnd(null);
+        setTouchStart(e.targetTouches[0].clientX);
+    };
+
+    const onTouchMove = (e: React.TouchEvent) => {
+        setTouchEnd(e.targetTouches[0].clientX);
+    };
+
+    const onTouchEnd = () => {
+        if (!touchStart || !touchEnd) return;
+
+        const distance = touchStart - touchEnd;
+
+        if (distance > minSwipeDistance) handleNext();
+        else if (distance < -minSwipeDistance) handlePrev();
+    };
+
+    /* KEYBOARD */
     useEffect(() => {
         const handleKey = (e: KeyboardEvent) => {
             if (selectedIndex === null) return;
@@ -63,9 +87,9 @@ export default function HongKongGallery() {
         return () => window.removeEventListener("keydown", handleKey);
     }, [selectedIndex, handleNext, handlePrev]);
 
-    /* ================= SCROLL LOCK ================= */
+    /* SCROLL LOCK */
     useEffect(() => {
-            document.body.style.overflow =
+        document.body.style.overflow =
             selectedIndex !== null ? "hidden" : "auto";
 
         return () => {
@@ -76,7 +100,7 @@ export default function HongKongGallery() {
     return (
         <main className="max-w-6xl mx-auto px-4 md:px-6 py-12 md:py-20">
 
-            {/* Header */}
+            {/* HEADER */}
             <div className="text-center mb-16">
                 <h1 className="text-2xl md:text-5xl tracking-[0.15em] md:tracking-[0.2em] uppercase font-light">
                     Hong Kong
@@ -89,22 +113,19 @@ export default function HongKongGallery() {
                 </p>
             </div>
 
-            {/* Grid */}
+            {/* GRID */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
                 {images.map((src, index) => (
                     <div
                         key={index}
                         onClick={() => setSelectedIndex(index)}
-                        className="group relative aspect-[3/4] md:aspect-[4/5] overflow-hidden rounded-xl shadow-sm hover:shadow-xl transition duration-500 cursor-pointer"
+                        className="group relative aspect-[3/4] md:aspect-[4/5] overflow-hidden rounded-xl cursor-pointer"
                     >
                         <Image
                             src={src}
-                            alt={`Hong Kong travel photo ${index + 1}`}
+                            alt={`Hong Kong ${index + 1}`}
                             fill
-                            priority={index === 0}
-                            quality={85}
-                            sizes="(max-width: 768px) 100vw, 33vw"
-                            className="object-cover transition duration-500 group-hover:scale-105"
+                            className="object-cover group-hover:scale-105 transition"
                         />
                     </div>
                 ))}
@@ -116,51 +137,59 @@ export default function HongKongGallery() {
                     className="fixed inset-0 bg-black/90 flex items-center justify-center z-50"
                     onClick={() => setSelectedIndex(null)}
                 >
+                    {/* CLOSE */}
                     <button
                         onClick={(e) => {
                             e.stopPropagation();
                             setSelectedIndex(null);
                         }}
-                        className="absolute top-6 right-6 text-white hover:scale-110 transition"
+                        className="absolute top-6 right-6 text-white z-50"
                     >
                         <X size={28} />
                     </button>
 
+                    {/* LEFT */}
                     <button
                         onClick={(e) => {
                             e.stopPropagation();
                             handlePrev();
                         }}
-                        className="absolute left-4 md:left-6 p-3 text-white"
+                        className="absolute left-4 text-white z-50"
                     >
                         <ChevronLeft size={40} />
                     </button>
 
+                    {/* IMAGE */}
                     <div
-                        className="relative w-[90%] h-[85%]"
+                        className="relative w-[95%] md:w-[80%] h-[75%] md:h-[85%]"
                         onClick={(e) => e.stopPropagation()}
+                        onTouchStart={onTouchStart}
+                        onTouchMove={onTouchMove}
+                        onTouchEnd={onTouchEnd}
                     >
                         <Image
                             src={images[selectedIndex]}
-                            alt="Hong Kong preview image"
+                            alt="Preview"
                             fill
                             className="object-contain"
                         />
                     </div>
 
-                    <div className="absolute bottom-6 text-white text-xs uppercase">
-                        {selectedIndex + 1} / {images.length}
-                    </div>
-
+                    {/* RIGHT */}
                     <button
                         onClick={(e) => {
                             e.stopPropagation();
                             handleNext();
                         }}
-                        className="absolute right-4 md:right-6 p-3 text-white"
+                        className="absolute right-4 text-white z-50"
                     >
                         <ChevronRight size={40} />
                     </button>
+
+                    {/* COUNTER */}
+                    <div className="absolute bottom-6 text-white text-xs">
+                        {selectedIndex + 1} / {images.length}
+                    </div>
                 </div>
             )}
         </main>
