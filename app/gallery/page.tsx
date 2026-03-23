@@ -6,7 +6,7 @@ import Script from "next/script";
 export const metadata: Metadata = {
 
     alternates: {
-        canonical: "https://yourdomain.com/gallery",
+        canonical: "https://thenomadicstory.com/gallery",
     },
 
     title: "Travel Photography Gallery | The Nomadic Story",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
         title: "Travel Photography Gallery | The Nomadic Story",
         description:
             "Explore curated travel photography from cities and cultures around the world.",
-        url: "https://yourdomain.com/gallery",
+        url: "https://thenomadicstory.com/gallery",
         siteName: "The Nomadic Story",
         images: [
             {
@@ -68,7 +68,7 @@ export default function GalleryPage() {
                         name: "Travel Photography Gallery",
                         description:
                             "A curated collection of travel photography from Hong Kong, Bali, and Seoul.",
-                        url: "https://yourdomain.com/gallery",
+                        url: "https://thenomadicstory.com/gallery",
                     }),
                 }}
             />

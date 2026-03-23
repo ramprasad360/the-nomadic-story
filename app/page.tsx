@@ -160,31 +160,53 @@ export default function Home() {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
 
                         {[
-                            { href: "/hong-kong", img: "/images/bruce-lee-statue-victoria-harbour-hong-kong.jpg", title: "Hong Kong" },
-                            { href: "/bali", img: "/images/bali-gates-of-heaven-temple-reflection.jpg", title: "Bali" },
-                            { href: "/seoul", img: "/images/seoul-traditional-street-architecture.jpg", title: "Seoul" },
+                            {
+                                href: "/hong-kong",
+                                img: "/images/bruce-lee-statue-victoria-harbour-hong-kong.jpg",
+                                title: "Hong Kong",
+                            },
+                            {
+                                href: "/bali",
+                                img: "/images/bali-gates-of-heaven-temple-reflection.jpg",
+                                title: "Bali",
+                            },
+                            {
+                                href: "/seoul",
+                                img: "/images/seoul-traditional-street-architecture.jpg",
+                                title: "Seoul",
+                            },
                         ].map((item) => (
 
-                            <Link key={item.href} href={item.href} className="group cursor-pointer">
+                            <Link key={item.href} href={item.href} className="group block">
 
                                 <div className="relative aspect-[4/5] overflow-hidden rounded-xl">
 
+                                    {/* IMAGE */}
                                     <Image
                                         src={item.img}
                                         alt={`${item.title} travel photography`}
                                         fill
-                                        sizes="(max-width: 768px) 100vw, 33vw"
-                                        className="object-cover transition-transform duration-700 md:group-hover:scale-105"
+                                        className="object-cover transition duration-700 group-hover:scale-105"
                                     />
 
-                                    {/* Gradient Overlay */}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 md:group-hover:opacity-100 transition duration-500" />
+                                    {/* OVERLAY */}
+                                    <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition duration-500" />
 
-                                    {/* Destination Title */}
-                                    <div className="absolute bottom-6 left-0 right-0 text-center">
-                                        <h3 className="text-white text-base sm:text-lg tracking-[0.35em] uppercase opacity-0 md:group-hover:opacity-100 transition duration-500">
+                                    {/* TITLE (Styled like button) */}
+                                    <div className="absolute inset-0 flex items-end justify-center pb-10">
+
+                                        <div className="
+                        border border-[#c6a75e]
+                        px-6 py-2
+                        text-xs tracking-[0.4em] uppercase
+                        text-[#c6a75e]
+                        bg-black/40 backdrop-blur-sm
+                        transition duration-300
+                        group-hover:bg-[#c6a75e] group-hover:text-white
+                    ">
                                             {item.title}
-                                        </h3>
+                                        </div>
+
                                     </div>
 
                                 </div>
@@ -196,7 +218,6 @@ export default function Home() {
                     </div>
 
                 </section>
-
                 {/* ================= SIGNATURE QUOTE ================= */}
                 <section className="bg-gray-50 py-16 sm:py-20 md:py-24 text-center px-6">
 
