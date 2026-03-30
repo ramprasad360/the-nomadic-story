@@ -153,8 +153,8 @@ export default function GallerySlider({ images }: { images: ImageItem[] }) {
                                 });
                             }}
                             className={`w-2 h-2 rounded-full transition-all ${index === activeIndex
-                                    ? "bg-[#c6a75e] scale-125"
-                                    : "bg-gray-400 opacity-50"
+                                ? "bg-[#c6a75e] scale-125"
+                                : "bg-gray-400 opacity-50"
                                 }`}
                         />
                     ))}

@@ -24,7 +24,7 @@ export const metadata: Metadata = {
         type: "profile",
         images: [
             {
-                url: "/images/ram-portrait.jpg",
+                url: "/images/personal/ram-portrait.jpg",
                 width: 1200,
                 height: 630,
                 alt: "Ram - Street Photographer & Traveler",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
         title: "About Me | The Nomadic Story",
         description:
             "Chennai-based traveler and street photographer sharing stories from Ireland to South Korea.",
-        images: ["/images/ram-portrait.jpg"],
+        images: ["/images/personal/ram-portrait.jpg"],
         creator: "@thenomadicstory",
         site: "@thenomadicstory"
     }, 
@@ -72,7 +72,7 @@ export default function AboutPage() {
             {/* HERO SECTION */}
             <section className="relative w-full min-h-[60vh] sm:min-h-[70vh] md:h-screen overflow-hidden">
                 <Image
-                    src="/images/ram-portrait.jpg"
+                    src="/images/personal/ram-portrait.jpg"
                     alt="Ram, travel photographer and founder of The Nomadic Story"
                     priority
                     fill
@@ -108,7 +108,7 @@ export default function AboutPage() {
                     <div className="grid grid-cols-2 gap-6">
                         <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
                             <Image
-                                src="/images/ram-cultural-festival-hong-kong.jpg"
+                                src="/images/personal/ram-cultural-festival-hong-kong.jpg"
                                 alt="Ram at Lantau Island, Hong Kong"
                                 fill
                                 sizes="(max-width:768px) 200px, 300px"
@@ -118,7 +118,7 @@ export default function AboutPage() {
                         </div>
                         <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
                             <Image
-                                src="/images/ram-global-travel-nami-island.jpg"
+                                src="/images/personal/ram-global-travel-nami-island.jpg"
                                 alt="Ram at Nami Island, South Korea during autumn"
                                 fill
                                 sizes="(max-width:768px) 200px, 300px"
@@ -153,7 +153,7 @@ export default function AboutPage() {
                     </div>
                     <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
                         <Image
-                            src="/images/ram-hong-kong-victoria-peak.jpg"
+                            src="/images/personal/ram-hong-kong-victoria-peak.jpg"
                             alt="Ram overlooking Hong Kong skyline from Victoria Peak"
                             fill
                             sizes="(max-width:768px) 100vw, 50vw"
@@ -234,7 +234,7 @@ export default function AboutPage() {
                         {/* LEFT IMAGE */}
                         <div className="relative aspect-square rounded-xl overflow-hidden shadow-lg group">
                             <Image
-                                src="/images/hong-kong-car.jpg"
+                                src="/images/hong-kong/hong-kong-car.jpg"
                                 alt="Red taxis driving through a street in Hong Kong"
                                 fill
                                 sizes="200px"
@@ -245,7 +245,7 @@ export default function AboutPage() {
                         {/* CENTER IMAGE (FEATURED) */}
                         <div className="relative aspect-square rounded-xl overflow-hidden shadow-lg group scale-110 z-10">
                             <Image
-                                src="/images/ram-tegenungan-waterfall.jpg"
+                                src="/images/personal/ram-tegenungan-waterfall.jpg"
                                 alt="Ram at Tegenungan waterfall, Bali"
                                 fill
                                 sizes="200px"
@@ -256,7 +256,7 @@ export default function AboutPage() {
                         {/* RIGHT IMAGE */}
                         <div className="relative aspect-square rounded-xl overflow-hidden shadow-lg group">
                             <Image
-                                src="/images/seoul-gyeongbokgung-palace.jpg"
+                                src="/images/seoul/seoul-gyeongbokgung-palace.jpg"
                                 alt="Entrance gate of Gyeongbokgung Palace in Seoul, South Korea"
                                 fill
                                 sizes="200px"

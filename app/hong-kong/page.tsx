@@ -35,7 +35,7 @@ export const metadata: Metadata = {
         url: "https://thenomadicstory.com/hong-kong",
         images: [
             {
-                url: "/images/hong-kong-city-skyline-view.png",
+                url: "/images/hong-kong/hong-kong-city-skyline-view.png",
                 width: 1200,
                 height: 630,
                 alt: "Hong Kong skyline at dusk with Victoria Harbour reflections",
@@ -48,38 +48,38 @@ export const metadata: Metadata = {
         title: "Hong Kong | The Nomadic Story",
         description:
             "Street photography, skyline reflections, and cultural rhythms from Hong Kong.",
-        images: ["/images/hong-kong-city-skyline-view.png"],
+        images: ["/images/hong-kong/hong-kong-city-skyline-view.png"],
     },
 };
 
 export default function HongKongPage() {
     const galleryImages = [
         {
-            src: "/images/hong-kong-city-skyline-view.png",
+            src: "/images/hong-kong/hong-kong-city-skyline-view.png",
             alt: "Hong Kong skyline from Victoria Peak",
         },
         {
-            src: "/images/bruce-lee-statue-victoria-harbour-hong-kong.jpg",
+            src: "/images/hong-kong/bruce-lee-statue-victoria-harbour-hong-kong.jpg",
             alt: "Bruce Lee statue at Victoria Harbour Hong Kong",
         },
         {
-            src: "/images/hong-kong-orange-tram-street.jpg",
+            src: "/images/hong-kong/hong-kong-orange-tram-street.jpg",
             alt: "Orange tram crossing street in Hong Kong",
         },
         {
-            src: "/images/hong-kong-blue-tram-city-street.jpg",
+            src: "/images/hong-kong/hong-kong-blue-tram-city-street.jpg",
             alt: "Blue tram on Hong Kong street",
         },
         {
-            src: "/images/hong-kong-night-street-bus.jpg",
+            src: "/images/hong-kong/hong-kong-night-street-bus.jpg",
             alt: "Night street bus scene in Hong Kong",
         },
         {
-            src: "/images/hong-kong-old-man-street-photography.jpg",
+            src: "/images/hong-kong/hong-kong-old-man-street-photography.jpg",
             alt: "Old man walking on a Hong Kong street",
         },
         {
-            src: "/images/hong-kong-local-market-shop.png",
+            src: "/images/hong-kong/hong-kong-local-market-shop.png",
             alt: "Local market shop in Hong Kong",
         },
     ];
@@ -111,7 +111,7 @@ export default function HongKongPage() {
                             },
                         },
                         image:
-                            "https://thenomadicstory.com/images/hong-kong-city-skyline-view.png",
+                            "https://thenomadicstory.com/images/hong-kong/hong-kong-city-skyline-view.png",
                     }),
                 }}
             />
@@ -119,7 +119,7 @@ export default function HongKongPage() {
             {/* HERO SECTION */}
             <section className="relative w-full min-h-[60vh] sm:min-h-[70vh] md:h-screen overflow-hidden">
                 <Image
-                    src="/images/hong-kong-city-skyline-view.png"
+                    src="/images/hong-kong/hong-kong-city-skyline-view.png"
                     alt="Hong Kong skyline symphony at dusk - Victoria Harbour reflections"
                     priority
                     fill
@@ -166,7 +166,7 @@ export default function HongKongPage() {
                     <div className="flex flex-col order-1 md:order-2">
                         <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
                             <Image
-                                src="/images/hong-kong-local-market-shop.png"
+                                src="/images/hong-kong/hong-kong-local-market-shop.png"
                                 alt="Street market shop in Mong Kok district, Hong Kong"
                                 fill
                                 sizes="(max-width:768px) 100vw, 50vw"
@@ -256,7 +256,7 @@ export default function HongKongPage() {
                     </p>
 
                     <Link
-                        href="/blog/hong-kong-3-day-itinerary"
+                        href="/blog/hong-kong-4-day-itinerary"
                         className="inline-block border border-[#c6a75e] px-6 py-3 text-xs tracking-[0.25em] uppercase text-[#c6a75e] hover:bg-[#c6a75e] hover:text-white transition duration-500"
                     >
                         View Itinerary

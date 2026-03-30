@@ -22,7 +22,7 @@ export const metadata: Metadata = {
         siteName: "The Nomadic Story",
         images: [
             {
-                url: "/images/hong-kong-city-skyline-view.png",
+                url: "/images/hong-kong/hong-kong-city-skyline-view.png",
                 width: 1200,
                 height: 630,
                 alt: "Travel photography gallery preview",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
         title: "Travel Photography Gallery",
         description:
             "A curated collection of travel photography from Hong Kong, Bali, and Seoul.",
-        images: ["/images/hong-kong-city-skyline-view.png"],
+        images: ["/images/hong-kong/hong-kong-city-skyline-view.png"],
     },
 
     keywords: [
@@ -51,9 +51,9 @@ export const metadata: Metadata = {
 
 export default function GalleryPage() {
     const destinations = [
-        { href: "/gallery/hong-kong", img: "/images/bruce-lee-statue-victoria-harbour-hong-kong.jpg", title: "Hong Kong" },
-        { href: "/gallery/bali", img: "/images/bali-gates-of-heaven-temple-reflection.jpg", title: "Bali" },
-        { href: "/gallery/seoul", img: "/images/seoul-gyeongbokgung-palace.jpg", title: "Seoul" },
+        { href: "/gallery/hong-kong", img: "/images/hong-kong/bruce-lee-statue-victoria-harbour-hong-kong.jpg", title: "Hong Kong" },
+        { href: "/gallery/bali", img: "/images/bali/bali-gates-of-heaven-temple-reflection.jpg", title: "Bali" },
+        { href: "/gallery/seoul", img: "/images/seoul/seoul-gyeongbokgung-palace.jpg", title: "Seoul" },
     ];
 
     return (

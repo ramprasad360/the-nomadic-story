@@ -101,7 +101,7 @@ export default function Home() {
 
                     <div className="relative aspect-[4/5] md:aspect-auto md:h-[500px] w-full rounded-2xl overflow-hidden">
                         <Image
-                            src="/images/ram-travel-photographer-the-nomadic-story.jpg"
+                            src="/images/personal/ram-travel-photographer-the-nomadic-story.jpg"
                             alt="Ram – travel photographer and founder of The Nomadic Story"
                             fill
                             priority
@@ -162,17 +162,17 @@ export default function Home() {
                         {[
                             {
                                 href: "/hong-kong",
-                                img: "/images/bruce-lee-statue-victoria-harbour-hong-kong.jpg",
+                                img: "/images/hong-kong/bruce-lee-statue-victoria-harbour-hong-kong.jpg",
                                 title: "Hong Kong",
                             },
                             {
                                 href: "/bali",
-                                img: "/images/bali-gates-of-heaven-temple-reflection.jpg",
+                                img: "/images/bali/bali-gates-of-heaven-temple-reflection.jpg",
                                 title: "Bali",
                             },
                             {
                                 href: "/seoul",
-                                img: "/images/seoul-traditional-street-architecture.jpg",
+                                img: "/images/seoul/seoul-traditional-street-architecture.jpg",
                                 title: "Seoul",
                             },
                         ].map((item) => (
