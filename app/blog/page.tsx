@@ -1,21 +1,26 @@
-import { Suspense } from "react";
+import { blogs } from "@/app/data/blogs";
 import BlogList from "./BlogList";
 
-interface Props {
-    searchParams?: {
-        q?: string;
-        category?: string;
-    };
-}
-
-export default function Page({ searchParams }: Props) {
+export default function Page() {
     return (
         <div className="container mx-auto px-6 py-12">
-            <h1 className="text-3xl font-bold mb-8">Blog</h1>
 
-            <Suspense fallback={<div className="text-center py-8">Loading...</div>}>
-                <BlogList searchParams={searchParams} />
-            </Suspense>
+            {/* TITLE */}
+            <div className="text-center mb-12">
+                <h1 className="text-4xl font-light tracking-wide">
+                    The Nomadic Journal
+                </h1>
+
+                <div className="w-12 h-[2px] bg-[#c6a75e] mx-auto mt-4 mb-4"></div>
+
+                <p className="text-gray-500 text-sm">
+                    Travel guides, experiences & itineraries
+                </p>
+            </div>
+
+            {/* BLOG LIST */}
+            <BlogList blogs={blogs} />
+
         </div>
     );
 }

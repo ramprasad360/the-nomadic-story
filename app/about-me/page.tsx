@@ -217,7 +217,7 @@ export default function AboutPage() {
                         Discover Hong Kong’s neon pulse, Bali’s temple rituals, Seoul’s modern-traditional dance.
                     </p>
                     <Link
-                        href="/"
+                        href="/blog"
                         className="inline-block border border-[#c6a75e] px-6 py-3 text-xs tracking-[0.25em] uppercase text-[#c6a75e] hover:bg-[#c6a75e] hover:text-white transition duration-500"
                     >
                         Visit The Blog
