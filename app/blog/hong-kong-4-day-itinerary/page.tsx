@@ -608,9 +608,12 @@ export default function HongKong4DayItinerary() {
 
 
             <section className="max-w-3xl mx-auto px-6 py-20">
-                <h2 className="text-xl tracking-[0.3em] uppercase text-center mb-12">
+                <h2 className="text-xl tracking-[0.3em] uppercase text-center mb-4">
                     Frequently Asked Questions
                 </h2>
+
+                {/* Underline */}
+                <div className="w-16 h-[2px] bg-[#c6a75e] mx-auto mb-10"></div>
 
                 <div className="space-y-8 text-gray-700">
                     <div>
