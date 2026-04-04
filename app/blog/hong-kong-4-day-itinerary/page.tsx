@@ -5,25 +5,23 @@ import type { Metadata } from "next";
 import Script from "next/script";
 
 export const metadata: Metadata = {
+
     alternates: {
         canonical: "https://thenomadicstory.com/blog/hong-kong-4-day-itinerary",
     },
 
-    title: "Hong Kong 4-Day Itinerary | Cities. Culture. Perspective.",
+    title: "Hong Kong 4 Day Itinerary (2026 Guide) | The Nomadic Story",
 
     description:
-        "A perfect 4-day Hong Kong itinerary covering Sheung Wan markets, Victoria Peak, Temple Street food, Tian Tan Buddha, Lantau Island, Disneyland, and more. Street photography locations and local experiences from The Nomadic Story.",
+        "Plan the perfect Hong Kong 4 day itinerary with Victoria Harbour, Lantau Island, Disneyland, markets, and travel tips for first-time visitors.",
 
     keywords: [
         "Hong Kong 4 day itinerary",
-        "Hong Kong travel itinerary",
-        "Victoria Peak Hong Kong",
-        "Temple Street night market",
-        "Tian Tan Buddha",
-        "Hong Kong Disneyland itinerary",
-        "Lantau Island Hong Kong",
-        "Sheung Wan markets",
-        "The Nomadic Story Hong Kong",
+        "Hong Kong itinerary 4 days",
+        "4 days in Hong Kong",
+        "Hong Kong travel guide",
+        "Lantau Island itinerary",
+        "Hong Kong Disneyland plan",
     ],
 
     authors: [{ name: "Ram", url: "https://thenomadicstory.com/about" }],
@@ -31,7 +29,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Hong Kong 4-Day Itinerary | The Nomadic Story",
         description:
-            "Discover Hong Kong in 4 days: markets, skylines, temples, Buddha, Lantau Island, and Disneyland.",
+            "Complete 4-day Hong Kong travel guide with skyline views, Lantau Island, Disneyland, and local markets.",
         siteName: "The Nomadic Story",
         type: "article",
         url: "https://thenomadicstory.com/blog/hong-kong-4-day-itinerary",
@@ -40,7 +38,7 @@ export const metadata: Metadata = {
                 url: "/images/hong-kong/hong-kong-avenue-of-stars.jpg",
                 width: 1200,
                 height: 630,
-                alt: "Hong Kong 4-day itinerary - Avenue of Stars",
+                alt: "Hong Kong skyline Victoria Harbour itinerary",
             },
         ],
     },
@@ -49,7 +47,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "Hong Kong 4-Day Itinerary | The Nomadic Story",
         description:
-            "Sheung Wan markets, Victoria Peak, Temple Street, Tian Tan Buddha, Lantau Island, Disneyland.",
+            "Explore Hong Kong in 4 days: skyline, Lantau Island, Disneyland, and markets.",
         images: ["/images/hong-kong/hong-kong-avenue-of-stars.jpg"],
     },
 };
@@ -75,20 +73,22 @@ export default function HongKong4DayItinerary() {
 
     return (
         <main>
-            {/* JSON-LD SEO */}
+
+
+            {/* ================= SEO STRUCTURED DATA ================= */}
+
+            {/* Article Schema */}
             <Script
-                id="hong-kong-itinerary-structured-data"
-                type="application/ld+json"
+                id="article-schema"
                 strategy="afterInteractive"
+                type="application/ld+json"
                 dangerouslySetInnerHTML={{
                     __html: JSON.stringify({
                         "@context": "https://schema.org",
                         "@type": "Article",
-                        headline: "Hong Kong 4-Day Itinerary | The Nomadic Story",
+                        headline: "Hong Kong 4 Day Itinerary",
                         description:
-                            "Complete 4-day itinerary for Hong Kong covering markets, temples, skylines, Lantau Island, and Disneyland.",
-                        mainEntityOfPage:
-                            "https://thenomadicstory.com/blog/hong-kong-4-day-itinerary",
+                            "Complete 4-day Hong Kong itinerary including Victoria Peak, Lantau Island, Disneyland and markets.",
                         author: {
                             "@type": "Person",
                             name: "Ram",
@@ -96,23 +96,60 @@ export default function HongKong4DayItinerary() {
                         publisher: {
                             "@type": "Organization",
                             name: "The Nomadic Story",
-                            logo: {
-                                "@type": "ImageObject",
-                                url: "https://thenomadicstory.com/icon.svg",
-                            },
                         },
                         image:
-                            "https://thenomadicstory.com/images/hong-kong-avenue-of-stars.jpg",
+                            "https://thenomadicstory.com/images/hong-kong/hong-kong-avenue-of-stars.jpg",
+                        mainEntityOfPage:
+                            "https://thenomadicstory.com/blog/hong-kong-4-day-itinerary",
                     }),
                 }}
             />
+
+            {/* FAQ Schema */}
+            <Script
+                id="faq-schema"
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "FAQPage",
+                        mainEntity: [
+                            {
+                                "@type": "Question",
+                                name: "Is 4 days enough for Hong Kong?",
+                                acceptedAnswer: {
+                                    "@type": "Answer",
+                                    text: "Yes, 4 days is enough to explore Victoria Harbour, Lantau Island, Disneyland, and local markets comfortably.",
+                                },
+                            },
+                            {
+                                "@type": "Question",
+                                name: "What is the best Hong Kong itinerary?",
+                                acceptedAnswer: {
+                                    "@type": "Answer",
+                                    text: "A 4-day itinerary covering Victoria Peak, Lantau Island, Disneyland, and Kowloon markets is ideal.",
+                                },
+                            },
+                            {
+                                "@type": "Question",
+                                name: "Is Hong Kong expensive for tourists?",
+                                acceptedAnswer: {
+                                    "@type": "Answer",
+                                    text: "Hong Kong can be expensive, but using public transport and local food makes it affordable.",
+                                },
+                            },
+                        ],
+                    }),
+                }}
+            />
+
 
             {/* HERO SECTION */}
             <section className="relative w-full h-[100vh] overflow-hidden">
 
                 <Image
                     src="/images/hong-kong/hong-kong-avenue-of-stars.jpg"
-                    alt="Hong Kong skyline"
+                    alt="Hong Kong skyline Victoria Harbour 4 day itinerary"
                     fill
                     priority
                     sizes="100vw"
@@ -126,14 +163,14 @@ export default function HongKong4DayItinerary() {
                         The Nomadic Story
                     </p>
 
-                    <h1 className="text-4xl md:text-7xl font-light tracking-[0.15em] uppercase mb-3">
-                        Hong Kong
+                    <h1 className="text-3xl md:text-6xl font-light tracking-wide mb-3">
+                        Hong Kong 4 Day Itinerary: Complete Travel Guide
                     </h1>
 
                     <div className="w-16 h-[2px] bg-[#c6a75e] mb-6" />
 
                     <p className="text-base md:text-2xl tracking-widest">
-                        4 Days • 10 Unmissable Experiences
+                        4 Days • Skyline • Markets • Disneyland
                     </p>
 
                 </div>
@@ -142,7 +179,7 @@ export default function HongKong4DayItinerary() {
             {/* INTRO */}
             <section className="max-w-4xl mx-auto px-6 py-20 text-center">
                 <p className="text-gray-600 text-lg leading-relaxed mb-10">
-                    Hong Kong surprised me in ways I didn’t expect — not just the skyline,
+                    This Hong Kong 4 day itinerary surprised me in ways I didn’t expect  — not just the skyline,
                     but the streets, the rhythm, and the contrast between chaos and calm.
                     Over four days, I explored both its iconic views and its quieter corners.
                 </p>
@@ -152,7 +189,6 @@ export default function HongKong4DayItinerary() {
                     This itinerary gives each experience its own space.
                 </p>
             </section>
-
 
             {/* ROUTE SUMMARY */}
             <section className="max-w-6xl mx-auto px-6 py-20">
@@ -323,7 +359,7 @@ export default function HongKong4DayItinerary() {
                         <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
                             <Image
                                 src="/images/hong-kong/tian-tan-buddha.jpg"
-                                alt="Tian Tan Buddha with cable car approach"
+                                alt="Tian Tan Buddha Lantau Island Hong Kong itinerary"
                                 fill
                                 sizes="(max-width:768px) 100vw, 50vw"
                                 className="object-cover object-top"
@@ -567,6 +603,44 @@ export default function HongKong4DayItinerary() {
                         </div>
                     </div>
                 </div>
+
+            </section>
+
+
+            <section className="max-w-3xl mx-auto px-6 py-20">
+                <h2 className="text-xl tracking-[0.3em] uppercase text-center mb-12">
+                    Frequently Asked Questions
+                </h2>
+
+                <div className="space-y-8 text-gray-700">
+                    <div>
+                        <h3 className="font-medium text-lg mb-2">
+                            Is 4 days enough for Hong Kong?
+                        </h3>
+                        <p className="text-sm leading-relaxed">
+                            Yes, 4 days is perfect to explore Hong Kong’s skyline, markets,
+                            Lantau Island, and Disneyland at a relaxed pace.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 className="font-medium text-lg mb-2">
+                            What is the best time to visit Hong Kong?
+                        </h3>
+                        <p className="text-sm leading-relaxed">
+                            October to March offers pleasant weather, ideal for sightseeing and outdoor experiences.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 className="font-medium text-lg mb-2">
+                            Is Hong Kong expensive for tourists?
+                        </h3>
+                        <p className="text-sm leading-relaxed">
+                            Hong Kong can be expensive, but budget options for food, transport, and attractions are widely available.
+                        </p>
+                    </div>
+                </div>
             </section>
 
             {/* FINAL REFLECTION */}
@@ -579,9 +653,24 @@ export default function HongKong4DayItinerary() {
 
                     <div className="w-16 h-[2px] bg-[#c6a75e] mx-auto mb-12" />
 
+                    <section className="text-center py-12 px-6">
+                        <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-4">
+                            Continue exploring
+                        </p>
+                        <Link
+                            href="/blog"
+                            className="inline-block border border-[#c6a75e] px-8 py-3 text-xs tracking-[0.25em] uppercase text-[#c6a75e] hover:bg-[#c6a75e] hover:text-white transition-all duration-300"
+                        >
+                            Explore more travel itineraries
+                        </Link>
+
+                    </section>
+
                     <SocialSection title="Hong Kong 4-Day Itinerary | The Nomadic Story" />
                 </div>
             </section>
+
+
         </main>
     );
 }

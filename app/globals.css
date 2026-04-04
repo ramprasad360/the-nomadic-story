@@ -71,6 +71,7 @@ html {
     .btn-luxury {
         @apply border border-[#c6a75e] text-[#c6a75e] uppercase transition-all duration-300;
         font-family: Taviraj, Georgia, Times, serif;
+        transition: all 0.3s ease;
         /* Mobile */
         font-size: 10px;
         letter-spacing: 0.2em;
@@ -87,6 +88,8 @@ html {
 
     .btn-luxury:hover {
         @apply bg-[#c6a75e] text-white;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(198, 167, 94, 0.2);
     }
 
     /* Social Icons */
