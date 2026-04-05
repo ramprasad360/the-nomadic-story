@@ -103,7 +103,7 @@ export default function ContactPage() {
             {/* Direct Contact */}
             <p className="text-center text-sm text-gray-500">
                 You can also email me at <br />
-                <span className="text-black">your@email.com</span>
+                <span className="text-black">contact@thenomadicstory.com</span>
             </p>
         </section>
     );
