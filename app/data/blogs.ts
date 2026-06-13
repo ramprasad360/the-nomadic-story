@@ -8,17 +8,14 @@ export const blogs = [
         image: "/images/hong-kong/hong-kong-avenue-of-stars.jpg",
         featured: false,
     },
-    {
-        slug: "bali-guide",
-        title: "Bali Budget Travel Guide",
+    
+  {
+        slug: "bali-4-day-itinerary",
+        title: "Bali 4 Day Itinerary: Ubud, Lempuyang & Uluwatu",
         category: "bali",
-        description: "Explore Bali on a budget...",
-        image: "/images/bali/bali-temple.jpg",
+        description:
+            "A complete 4-day Bali itinerary covering Ubud, sacred temples, Lempuyang Temple, Uluwatu Temple, and the Kecak Fire Dance.",
+        image: "/images/bali/bali-river-valley-view.jpg",
         featured: false,
-        content: `
-Day 1: Explore Ubud  
-Day 2: Visit temples  
-Day 3: Beach time  
-    `,
     },
-];
+]

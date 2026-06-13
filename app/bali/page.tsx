@@ -243,7 +243,7 @@ export default function BaliPage() {
                     </p>
 
                     <Link
-                        href="/blog/bali-5-day-itinerary"
+                        href="/blog/bali-4-day-itinerary"
                         className="inline-block border border-[#c6a75e] px-6 py-3 text-xs tracking-[0.25em] uppercase text-[#c6a75e] hover:bg-[#c6a75e] hover:text-white transition duration-500"
                     >
                         View Itinerary
