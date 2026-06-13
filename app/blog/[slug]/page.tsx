@@ -57,11 +57,6 @@ export default async function BlogPage({ params }: Props) {
                 className="rounded-xl mb-6"
             />
 
-            {/* Content */}
-            <div className="text-gray-700 leading-relaxed whitespace-pre-line">
-                {blog.content}
-            </div>
-
             {/* Back Button */}
             <div className="mt-10">
                 <a
