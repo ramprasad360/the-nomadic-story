@@ -16,7 +16,6 @@ export default function BaliGallery() {
         "/images/bali/bali-kecak-fire-dance-performance.jpg",
         "/images/bali/bali-monument-cultural-statue.jpg",
         "/images/bali/bali-rice-field-landscape.jpg",
-        "/images/bali/bali-river-valley-view.jpg",
         "/images/bali/bali-statue-architecture-blue-sky.jpg",
         "/images/bali/bali-temple-area-green-surroundings.jpg",
         "/images/bali/bali-temple-complex-wide-view.jpg",
