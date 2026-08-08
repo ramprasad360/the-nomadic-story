@@ -62,12 +62,13 @@ export default function SeoulPage() {
             src: "/images/seoul/seoul-bukchon-hanok-alley.jpg",
             alt: "Traditional hanok alley in Bukchon Seoul",
         },
+
         {
             src: "/images/seoul/seoul-gyeongbokgung-palace.jpg",
             alt: "Gyeongbokgung Palace in Seoul",
         },
         {
-            src: "/images/seoul/seoul-hand-sculpture-front.jpg",
+            src: "/images/seoul/seoul-hand-sculpture.jpg",
             alt: "Large hand sculpture in Seoul",
         },
         {
@@ -339,4 +340,5 @@ export default function SeoulPage() {
 
         </main>
     );
+
 }
