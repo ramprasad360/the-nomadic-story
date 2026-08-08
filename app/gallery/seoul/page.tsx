@@ -10,12 +10,12 @@ export default function SeoulGallery() {
     const images = [
         // BUKCHON HANOK VILLAGE
         "/images/seoul/seoul-bukchon-hanok-alley.jpg",
-        "/images/seoul/seoul-bukchon-hanok-streets-shop.jpg",
+        "/images/seoul/seoul-gwanghwamun-gate.jpg", 
         "/images/seoul/seoul-bukchon-hanok-street-view.jpg",
         "/images/seoul/seoul-bukchon-hanok-courtyard.jpg",
         "/images/seoul/seoul-bukchon-hanok-rooftops.jpg",
         "/images/seoul/seoul-hanok-alley-sunlight.jpg",
-        "/images/seoul/seoul-hanok-street-sunset.jpg",
+        "/images/seoul/seoul-bukchon-hanok-streets-shop.jpg",
 
         // GYEONGBOKGUNG PALACE
         "/images/seoul/seoul-gyeongbokgung-palace.jpg",
