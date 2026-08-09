@@ -468,12 +468,9 @@ export default function Seoul4DayItinerary() {
                     {/* TEXT — LEFT */}
                     <div className="order-2 md:order-1">
 
-                        <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-4">
-                            Day 1
-                        </p>
 
                         <h2 className="font-light text-3xl md:text-4xl tracking-[0.15em] uppercase text-gray-900 mb-6">
-                            Walking Through Bukchon
+                            Day 01: Walking Through Bukchon
                         </h2>
 
                         <div className="w-16 h-[2px] bg-[#c6a75e] mb-8" />
@@ -594,12 +591,8 @@ export default function Seoul4DayItinerary() {
                     {/* TEXT — RIGHT */}
                     <div className="order-2">
 
-                        <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-4">
-                            Day 2
-                        </p>
-
                         <h2 className="font-light text-3xl md:text-4xl tracking-[0.15em] uppercase text-gray-900 mb-6">
-                            Gyeongbokgung & Gwanghwamun
+                            Day 02: Gyeongbokgung & Gwanghwamun
                         </h2>
 
                         <div className="w-16 h-[2px] bg-[#c6a75e] mb-8" />
@@ -649,12 +642,9 @@ export default function Seoul4DayItinerary() {
                     {/* TEXT — LEFT */}
                     <div className="order-2 md:order-1">
 
-                        <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-4">
-                            Day 3
-                        </p>
 
                         <h2 className="font-light text-3xl md:text-4xl tracking-[0.15em] uppercase text-gray-900 mb-6">
-                            Nami Island & The Villages Beyond Seoul
+                            Day 03: Nami Island & The Villages Beyond Seoul
                         </h2>
 
                         <div className="w-16 h-[2px] bg-[#c6a75e] mb-8" />
@@ -770,12 +760,8 @@ export default function Seoul4DayItinerary() {
                     {/* TEXT — RIGHT */}
                     <div className="order-2">
 
-                        <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-4">
-                            Day 4
-                        </p>
-
                         <h2 className="font-light text-3xl md:text-4xl tracking-[0.15em] uppercase text-gray-900 mb-6">
-                            Modern Seoul
+                            Day 4: Modern Seoul
                         </h2>
 
                         <div className="w-16 h-[2px] bg-[#c6a75e] mb-8" />
