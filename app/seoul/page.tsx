@@ -310,7 +310,7 @@ export default function SeoulPage() {
                     </p>
 
                     <Link
-                        href="/blog/seoul-itinerary"
+                        href="/blog/seoul-4-day-itinerary"
                         className="inline-block border border-[#c6a75e] px-6 py-3 text-xs tracking-[0.25em] uppercase text-[#c6a75e] hover:bg-[#c6a75e] hover:text-white transition duration-500"
                     >
                         View Itinerary
