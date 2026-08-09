@@ -18,4 +18,14 @@ export const blogs = [
         image: "/images/bali/bali-river-valley-view.jpg",
         featured: false,
     },
+
+    {
+        slug: "seoul-4-day-itinerary",
+        title: "Seoul 4-Day Itinerary: Complete Travel Guide",
+        category: "seoul",
+        description:
+            "Four days through traditional Seoul, royal palaces, Nami Island, surrounding villages, Starfield Library, and modern Seoul.",
+        image: "/images/seoul/seoul-gwanghwamun-gate.jpg",
+        featured: false,
+    },
 ]
