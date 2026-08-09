@@ -470,7 +470,7 @@ export default function Seoul4DayItinerary() {
 
 
                         <h2 className="font-light text-3xl md:text-4xl tracking-[0.15em] uppercase text-gray-900 mb-6">
-                            Day 01: Walking Through Bukchon
+                            Day 1: Walking Through Bukchon
                         </h2>
 
                         <div className="w-16 h-[2px] bg-[#c6a75e] mb-8" />
@@ -592,7 +592,7 @@ export default function Seoul4DayItinerary() {
                     <div className="order-2">
 
                         <h2 className="font-light text-3xl md:text-4xl tracking-[0.15em] uppercase text-gray-900 mb-6">
-                            Day 02: Gyeongbokgung & Gwanghwamun
+                            Day 2: Gyeongbokgung & Gwanghwamun
                         </h2>
 
                         <div className="w-16 h-[2px] bg-[#c6a75e] mb-8" />
@@ -644,7 +644,7 @@ export default function Seoul4DayItinerary() {
 
 
                         <h2 className="font-light text-3xl md:text-4xl tracking-[0.15em] uppercase text-gray-900 mb-6">
-                            Day 03: Nami Island & The Villages Beyond Seoul
+                            Day 3: Nami Island & The Villages Beyond Seoul
                         </h2>
 
                         <div className="w-16 h-[2px] bg-[#c6a75e] mb-8" />
